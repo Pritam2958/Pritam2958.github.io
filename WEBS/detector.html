@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detect Click Outside An Element</title>
+    <h1 align="center">Click Detector</h1>
+    <h3 align="center">click on any place to detect where you clicked</h3>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        height: 100vh;
+        display: -ms-grid;
+        display: grid;
+        place-items: center;
+        background-color: #6b72e7;
+      }
+      .container {
+        width: 300px;
+      }
+      #our-elem {
+        background-color: #ffffff;
+        width: 200px;
+        height: 200px;
+        border-radius: 5px;
+        margin: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        gap: 20px;
+        font-size: 1.5em;
+      }
+      #our-elem button {
+        font-size: 0.8em;
+        padding: 0.6em;
+        background-color: #6b72e7;
+        border: none;
+        color: #ffffff;
+        border-radius: 5px;
+      }
+      #message {
+        font-size: 1.3em;
+        margin-top: 1.5em;
+        padding: 0.6em 0.2em;
+        text-align: center;
+        background-color: #000000;
+        color: #ffffff;
+        border-radius: 5px;
+      }
+      a {
+        display: block;
+        background-color: #ffffff;
+        text-align: center;
+        font-size: 1.2em;
+        padding: 0.6em 0;
+        color: #000000;
+        font-weight: 600;
+        text-decoration: none;
+        margin-top: 30px;
+        border-radius: 5px;
+        -webkit-animation: pulse 2s linear infinite;
+                animation: pulse 2s linear infinite;
+      }
+      @-webkit-keyframes pulse {
+        50% {
+          -webkit-transform: scale(1.05);
+                  transform: scale(1.05);
+        }
+      }
+      @keyframes pulse {
+        50% {
+          -webkit-transform: scale(1.05);
+                  transform: scale(1.05);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="our-elem">
+        <span>Click me!!</span>
+        <button>Click Me too!</button>
+      </div>
+      <p id="message">Try Clicking Anywhere!</p>
+    </div>
+    <script>
+      let ourElem = document.getElementById("our-elem");
+      let message = document.getElementById("message");
+      document.addEventListener("click", (e) => {
+        let clickedElem = e.target;
+        do {
+          if (clickedElem == ourElem) {
+            message.textContent = "Click Is Inside The Element";
+            return;
+          }
+          clickedElem = clickedElem.parentNode;
+        } while (clickedElem);
+        message.textContent = "Click Is Outside The Element";
+      });
+    </script>
+  </body>
+</html>
