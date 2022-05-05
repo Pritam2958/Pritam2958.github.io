@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<style type="text/css">
+body{
+margin:0px;
+padding:0px;
+
+}
+*{
+ text-align:justify;
+    
+}
+canvas{
+background:black;
+position:fixed;}
+div{
+    
+   width:40px;
+   height:40px;
+   background:#212121;
+   position:fixed;
+   right:0px;
+   top:0px;
+   border-radius:0px 0px 0px 20px;
+   z-index:1000;
+        opacity:;
+        transtiton:.1s;
+}
+div:active{
+   opacity:0.5; 
+   background:blue  ;
+    
+}
+
+button{
+   position:fixed;
+   left:0px;
+   top:0px;
+    z-index:2000;
+    
+}
+</style>
+<body>
+<div></div>
+<!--<button>Get Image</button>
+-->
+<canvas style="border:1px solid black;"   ontouchstart="jt(event)"height="630" width="370" ></canvas>
+<script type="text/javascript">
+
+can=document.querySelector("canvas")
+c=can.getContext("2d")
+var b=setInterval(()=>{
+can.width=window.innerWidth
+can.height=window.innerHeight
+})
+setTimeout(()=>{
+clearInterval(b)
+
+
+},1000)
+function jt(event){
+var o=event.touches[0].clientX
+var w=event.touches[0].clientY
+c.beginPath()
+
+c.moveTo(o,w)
+c.beginPath()
+c.lineWidth=10
+c.lineTo(o,w)
+c.stroke()
+
+document.querySelector("canvas").ontouchmove=function(event){
+var X=event.touches[0].clientX
+var Y=event.touches[0].clientY
+c.lineTo(X,Y)
+c.lineJoin="round";
+c.lineCap="round"
+c.lineWidth=10
+c.strokeStyle="#ff441a"
+c.shadowColor="#ff441a"
+c.shadowBlur="2"
+c.stroke()
+
+document.querySelector("div").onclick=function()
+{
+
+ c.clearRect(0,0,can.width,can.height)
+navigator.vibrate(100)
+    
+}
+
+
+}
+}
+
+  
+  
+alert("click on right top button to clear the screen")
+</script>
+</body>
+</html>
