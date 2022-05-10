@@ -1,0 +1,70 @@
+<!--
+Created By Pritam2958
+
+DO NOT COPY WITHOUT CREDITS ❌
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get All Your Details!</title>
+    </head>
+    <body>
+    <p>c:/windows/usr/$ sudo apt device .details </p>
+<pre class='content'>
+</pre>
+<button class='location'>Open Your Location In Google Maps!</button>
+    </body>
+</html>
+<style> 
+body {
+    background-color: rgb(0, 0, 0);
+     color: rgb(0, 255, 0);
+}
+
+pre{
+    color: rgb(0, 255, 0);
+    
+}
+
+button{
+    cursor: pointer;
+    border: 0px;
+    font-family: monospace;
+    width: 100%;
+}
+</style>
+<script>
+function insert(data){
+    document.querySelector('.content').innerHTML+=data+'\n';
+}
+
+navigator.getBattery().then(function (battery){
+    level=battery.level*100+'%';
+    insert(`Your Device's Current Charge: ${level}`)
+});
+var data=fetch('https://ipinfo.io/json').then(response => response.json().then(data => {
+    insert(`Your IP Address: ${data.ip}`)
+    insert(`Your Location: ${data.city}, ${data.region}, ${data.country}`)
+    insert(`Your Timezone: ${data.timezone}`)
+    document.querySelector('.location').addEventListener('click', () => {
+        window.open(`https://maps.google.com/maps/@${data.loc}`, '_blank');
+    });
+}));
+
+
+insert(`Web View By: ${navigator.vendor}`)
+insert(`Your OS Platform: ${navigator.platform}`)
+
+alert(`Don't Worry...
+Your Data Is Not Sent To Anyone!
+
+Hope You Like It !
+
+Also,
+IF YOU ARE USING
+A VPN SERVICE,
+THEN YOUR LOCATION
+WILL BE SHOWN WRONG!
+
+copyright @Pritam2958`)
+</script>
