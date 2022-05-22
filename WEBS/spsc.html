@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <section>
+            <div class="intro-section">
+                <h1>Rock Paper Scissors</h1>
+                <button onclick="startGame()">Let's Play</button>
+            </div>
+
+            <div class="game fadeOut">
+                <div class="life">
+                    <img class="life-one"
+                        src="content://com.android.chrome.FileProvider/images/screenshot/1653210139902-29009289.jpg"
+                        height="40px"
+                        alt=""
+                    />
+                    <img class="life-two"
+                        src="content://com.android.chrome.FileProvider/images/screenshot/1653210139902-29009289.jpg"
+                        height="40px"
+                        alt=""
+                    />
+                    <img class="life-three"
+                        src="content://com.android.chrome.FileProvider/images/screenshot/1653210139902-29009289.jpg"
+                        height="40px"
+                        alt=""
+                    />
+                </div>
+
+                <section>
+                    <div class="score-board">
+                        <div class="player-score">
+                            <h2>Player</h2>
+                            <p>0</p>
+                        </div>
+                        <div class="computer-score">
+                            <h2>Computer</h2>
+                            <p>0</p>
+                        </div>
+                    </div>
+
+                    <div class="match">
+                        <h2 class="winner">Choose an Option</h2>
+
+                        <div class="hands">
+                            <img
+                                class="player-hand"
+                                src="https://i.ya-webdesign.com/images/rock-paper-scissors-png-17.png"
+                                alt="rock"
+                                height="250px"
+                            />
+                            <img
+                                class="computer-hand"
+                                src="https://i.ya-webdesign.com/images/rock-paper-scissors-png-17.png"
+                                alt="rock"
+                                height="250px"
+                            />
+                        </div>
+
+                        <div class="options">
+                            <button onclick="optionClick('rock')" class="rock">rock</button>
+                            <button onclick="optionClick('paper')" class="paper">
+                                paper
+                            </button>
+                            <button onclick="optionClick('scissors')" class="scissors">
+                                scissors
+                            </button>
+                        </div>
+
+                        <button class="replay fadeOut" onclick="replay()">Replay</button>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <script src="./app.js"></script>
+    </body>
+</html>
+<style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: rgb(51, 51, 51);
+}
+
+section {
+    background-color: rgb(146, 166, 233);
+    height: 100vh;
+    font-family: sans-serif;
+    color: var(--text-color);
+}
+
+.intro-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.intro-section h1 {
+    font-size: 40px;
+}
+
+.intro-section button,
+.options button,
+.replay {
+    width: 130px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(185, 81, 11);
+    color: white;
+    font-size: 20px;
+    pointer-events: all;
+    cursor: pointer;
+    margin: 40px;
+}
+
+.game {
+    position: relative;
+    top: -95vh;
+}
+
+.life {
+    position: absolute;
+    right: 30px;
+
+}
+
+.game section {
+    position: relative;
+    top: 70px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score-board h2 {
+    font-size: 32px;
+}
+
+.score-board p {
+    font-size: 25px;
+    text-align: center;
+    margin: 5px;
+}
+
+.match h2 {
+    text-align: center;
+    font-size: 42px;
+    margin: 20px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hands {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.computer-hand {
+    transform: rotateY(180deg);
+}
+
+.replay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-out;
+}
+
+.fadeIn {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.5s ease-in;
+}
+
+@keyframes shakeComputer {
+    0% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    25% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    35% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    50% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    65% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    75% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    85% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    100% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+}
+
+@keyframes shakePlayer {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(-50px);
+    }
+    35% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    65% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(-50px);
+    }
+    85% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-50px);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hands img {
+        height: 150px;
+    }
+
+    .intro-section h1 {
+        font-size: 32px;
+    }
+
+    .options button {
+        width: 100px;
+        height: 45px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .life img{
+        height: 30px;
+    }
+}
+
+</style>
+<script>
+   
+let playerScore = 0;
+let computerScore = 0;
+
+let life = 3;
+
+function startGame() {
+    const introSection = document.querySelector(".intro-section");
+    const game = document.querySelector(".game");
+
+    introSection.classList.add("fadeOut");
+    game.classList.add("fadeIn");
+
+    playMatch();
+}
+
+function playMatch() {
+    const hands = document.querySelectorAll(".hands img");
+
+    hands.forEach((hand) => {
+        hand.addEventListener("animationend", function () {
+            this.style.animation = "";
+        });
+    });
+}
+
+function optionClick(choice) {
+    const playerHand = document.querySelector(".player-hand");
+    const computerHand = document.querySelector(".computer-hand");
+
+    setTimeout(() => {
+        const computerChoiceString = computerChoice();
+        displayHand(choice, playerHand);
+        displayHand(computerChoiceString, computerHand);
+
+        compareHands(choice, computerChoiceString);
+    }, 2000);
+
+    playerHand.src =
+        "https://i.ya-webdesign.com/images/rock-paper-scissors-png-17.png";
+    computerHand.src =
+        "https://i.ya-webdesign.com/images/rock-paper-scissors-png-17.png";
+
+    playAimation();
+}
+
+function playAimation() {
+    const playerHand = document.querySelector(".player-hand");
+    const computerHand = document.querySelector(".computer-hand");
+
+    playerHand.style.animation = "shakePlayer 2s ease";
+    computerHand.style.animation = "shakeComputer 2s ease";
+}
+
+function computerChoice() {
+    const computerOptionsArray = ["rock", "paper", "scissors"];
+    const computerOptionsIndex = Math.floor(Math.random() * 3);
+    const computerChoiceString = computerOptionsArray[computerOptionsIndex];
+
+    return computerChoiceString;
+}
+
+function displayHand(choice, hand) {
+    switch (choice) {
+        case "rock":
+            hand.src =
+                "https://i.ya-webdesign.com/images/rock-paper-scissors-png-17.png";
+            break;
+
+        case "paper":
+            hand.src =
+                "https://www3.bostonglobe.com//rw/Boston/2011-2020/WebGraphics/Metro/BostonGlobe.com/2018/05/rockpaperscissors/assets/paper--left.png";
+            break;
+
+        case "scissors":
+            hand.src =
+                "https://www3.bostonglobe.com//rw/Boston/2011-2020/WebGraphics/Metro/BostonGlobe.com/2018/05/rockpaperscissors/assets/scissors--left.png";
+            break;
+    }
+}
+
+function compareHands(playerChoice, computerChoice) {
+    const winner = document.querySelector(".winner");
+
+    if (playerChoice === computerChoice) {
+        winner.textContent = "It is a tie";
+        return;
+    }
+
+    if (playerChoice === "rock") {
+        if (computerChoice === "scissors") {
+            winner.textContent = "Player wins";
+            playerScore++;
+        } else {
+            winner.textContent = "Computer wins";
+            computerScore++;
+
+            life--;
+            checkLife();
+        }
+        updateScore();
+        return;
+    }
+
+    if (playerChoice === "paper") {
+        if (computerChoice === "rock") {
+            winner.textContent = "Player wins";
+            playerScore++;
+        } else {
+            winner.textContent = "Computer wins";
+            computerScore++;
+
+            life--;
+            checkLife();
+        }
+        updateScore();
+
+        return;
+    }
+
+    if (playerChoice === "scissors") {
+        if (computerChoice === "paper") {
+            winner.textContent = "Player wins";
+            playerScore++;
+        } else {
+            winner.textContent = "Computer wins";
+            computerScore++;
+
+            life--;
+            checkLife();
+        }
+        updateScore();
+
+        return;
+    }
+}
+
+function checkLife() {
+    const lifeOne = document.querySelector(".life-one");
+    const lifeTwo = document.querySelector(".life-two");
+    const lifeThree = document.querySelector(".life-three");
+
+    if (life === 2) {
+
+        lifeOne.classList.add("fadeOut");
+    }
+    if (life === 1) {
+
+        lifeTwo.classList.add("fadeOut");
+    }
+    if (life === 0) {
+
+        lifeThree.classList.add("fadeOut");
+        alert("Sorry you lose!🙁\n Better luck next time🙂");
+
+        const buttons = document.querySelectorAll(".options button");
+
+        buttons.forEach((button) => {
+            button.disabled = true;
+            button.classList.add("fadeOut");
+        });
+
+        const replay = document.querySelector(".replay");
+        replay.classList.add("fadeIn");
+    }
+}
+
+function updateScore() {
+    const playerScoreText = document.querySelector(".player-score p");
+    const computerScoreText = document.querySelector(".computer-score p");
+
+    playerScoreText.textContent = playerScore;
+    computerScoreText.textContent = computerScore;
+}
+
+function replay() {
+    const optionButtons = document.querySelectorAll(".options button");
+    const replayButton = document.querySelector(".replay");
+    const lifeImages = document.querySelectorAll(".life img");
+
+    replayButton.classList.remove("fadeIn");
+    replayButton.classList.add("fadeOut");
+
+    optionButtons.forEach((optionButton) => {
+        optionButton.disabled = false;
+        optionButton.classList.add("fadeIn");
+    });
+
+    playerScore = 0;
+    computerScore = 0;
+
+    updateScore();
+
+    lifeImages.forEach((lifeImage) => {
+        lifeImage.classList.remove("fadeOut");
+        lifeImage.classList.add("fadeIn");
+    });
+
+    playMatch();
+}
+
+</script>
