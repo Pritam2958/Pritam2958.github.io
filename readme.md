@@ -1,13 +1,10 @@
 <!-- This is about me -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Pritam Santra</title>
-    </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <body>
+    <body style="background-color: white">
       <h1 align="center">Hello Guys!!!!</h1>  
       <h5 align="center">About me 
      </h5>
@@ -21,7 +18,6 @@
      <li><h4>Languages I know: C++ </h4></li>
     <li> <h4>Learning now: Web dev(html,css,js,php)</h4></li>
      </ol>
-     
      <hr/>
      <details align="center">
         <summary>See my Social Media</summary>
@@ -75,19 +71,3 @@
   <img src="https://www.sololearn.com/certificates/course/en/23055079/1051/landscape/png" alt="cpp certificate">
     </body>
 </html>
-<style>
- *{
- width: 900px;
- align-items: center;
- font-family: 'Source Sans Pro', sans-serif;
- color: #233067;
- background-color: #FFF5EE;
- }
- img {
- padding: 10px;
- border: 5px solid rgb(0,0,0);
- }
- ::selection {
- color: rgb(0,0,0)
- }
-</style>
