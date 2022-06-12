@@ -22,9 +22,7 @@
      <details align="center">
         <summary>See my Social Media</summary>
      <h1 align="center">Social Media :</h1>
-    <h2><i>
-    <p align="center"><a href = "https://github.com/Pritam2958">Github</a>
-    </p>
+    <h2><i> 
     <p align="center"> <a href ="https://youtube.com/channel/UCiHnC84X5gaQ8h5FoQIJ4zw">Youtube</a> </p>
     <p align="center"> <a href ="https://www.sololearn.com/Profile/23055079/?ref=app">Sololearn</a> </p>
     <p align="center"> <a href="https://open.spotify.com/user/314cje7mh33qaaurdfewiei27nr4?si=KzUlBvQSSXCsbORTm17C8A&utm_source=copy-link ">Spotify</a></p>
