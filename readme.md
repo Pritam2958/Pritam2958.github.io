@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="shortcut icon" type="x-icon" href="icon.png">
-    <body style="background-color: rgb(255, 245, 238);">
+    <body style="background-color: #FFFFFF;">
         <img align="center" src="https://media.tenor.com/images/0f7b59e27e63edbf1f097820e234a1fe/tenor.gif?ctx=share" alt="hello">
       <h1 align="center">Hello Guys!!!!</h1>  
       <h5 align="center">About me 
