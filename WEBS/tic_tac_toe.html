@@ -1,0 +1,263 @@
+<html>
+
+    <head>
+       
+        <style type="text/css">
+  body {
+  font-family: Arial;
+  background-color: cyan;
+
+  }
+  
+  input.game-button {
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+
+  }
+
+  input.new-game-button {
+  font-size: 30px;
+  text-align: center;
+  background-color: #37507e; 
+  color: white;
+  }
+
+  p.turns {
+    font-size: 40px;
+    color: #37507e;
+    font-weight: bold;
+     }
+
+    h1.Title {
+      font-style: bold; 
+      text-align: center;
+      text-decoration: underline;
+      text-shadow: 4px 3px grey; 
+      font-size: 65px; 
+      outline-color: red
+      ;
+      outline-width: thick;
+      outline: double;
+    }
+
+  </style>
+
+
+
+
+       <SCRIPT TYPE="TEXT/JAVASCRIPT">
+              var xTurn = true; 
+    
+            function squareclicked(square) 
+            
+            {
+                square.value = 'X'; 
+            }
+     numMoves = 0;
+      gameOver = false; 
+
+     function squareclicked(square)
+      {
+       
+   if(gameOver)
+ {
+  
+   alert('The game is already over.');
+  return;
+ }
+     var status = document.getElementById('status');
+     var value = square.value;
+    if(value != 'X' && value != 'O')
+    {
+        // turns 
+       if(xTurn)
+       {
+          numMoves++;
+          square.value = 'X';
+          xTurn = false;
+          status.innerHTML = ' O \'s turn '
+       }
+           else
+          {
+            numMoves++;
+             square.value = 'O';
+             xTurn = true;
+             status.innerHTML = ' X \' s turn ' 
+          }
+          var winner = checkWin();
+ if(!winner)
+ {
+   //check for tie
+  if(numMoves == 9)
+     {
+      status.innerHTML = 'Tie Game!';
+     } 
+ }
+ else
+   gameOver = true;
+     
+     }
+       else
+          alert('That square has already been played.');
+         
+    }
+         </SCRIPT>
+
+      
+
+
+
+
+
+
+
+
+
+
+       <SCRIPT TYPE="TEXT/JAVASCRIPT">
+      // New Game 
+      function newgame()
+{
+  numMoves = 0;
+      gameOver = false; 
+   var status = document.getElementById('status');
+
+   xTurn = true;
+   status.innerHTML = 'X\'s turn';
+
+   for(var x = 0; x < 3; x++)
+   {
+      for(var y = 0; y < 3; y++)
+      {
+         document.getElementById(x + '_' + y).value = ' ';
+      }
+   }
+}
+        </SCRIPT>
+     
+
+
+
+
+
+
+
+    
+
+
+
+
+      <SCRIPT TYPE="TEXT/JAVASCRIPT">
+      
+
+      
+      function checkWin()
+      {
+       var gameOver = false; 
+      var numMoves = 0;
+        var status = document.getElementById('status');
+        var val0;
+ var val1;
+ var val2;
+
+ // check columns
+ for(var y = 0; y < 3; y++)
+ {
+   val0 = document.getElementById('0_'+y).value;
+   val1 = document.getElementById('1_'+y).value;
+   val2 = document.getElementById('2_'+y).value;
+   if(val0 == 'X' && val1 == 'X' && val2 == 'X')
+   {
+      status.innerHTML = 'X WINS!';
+      return true;
+   }
+   else if(val0 == 'O' && val1 == 'O' && val2 == 'O')
+   {
+      status.innerHTML = 'O WINS!';
+      return true;
+   }
+ }
+
+ // check rows
+ for(var x = 0; x < 3; x++)
+ {
+   val0 = document.getElementById(x + '_0').value;
+   val1 = document.getElementById(x + '_1').value;
+   val2 = document.getElementById(x + '_2').value;
+   if(val0 == 'X' && val1 == 'X' && val2 == 'X')
+   {
+      status.innerHTML = 'X WINS!';
+      return true;
+   }
+   else if(val0 == 'O' && val1 == 'O' && val2 == 'O')
+   {
+      status.innerHTML = 'O WINS!';
+      return true;
+   }
+ }
+
+ // check top left to lower right diagonal
+ val0 = document.getElementById('0_0').value;
+ val1 = document.getElementById('1_1').value;
+ val2 = document.getElementById('2_2').value;
+ if(val0 == 'X' && val1 == 'X' && val2 == 'X')
+ {
+   status.innerHTML = "X WINS!";
+   return true;
+ }
+ else if(val0 == 'O' && val1 == 'O' && val2 == 'O')
+ {
+   status.innerHTML = "O WINS!";
+   return true;
+ }
+
+ // check lower left to top right diagonal
+ val0 = document.getElementById('2_0').value;
+ val1 = document.getElementById('1_1').value;
+ val2 = document.getElementById('0_2').value;
+ if(val0 == 'X' && val1 == 'X' && val2 == 'X')
+ {
+   status.innerHTML = "X WINS!";
+ return true;
+ }
+ else if(val0 == 'O' && val1 == 'O' && val2 == 'O') //check this
+ {
+   status.innerHTML = "O WINS!";
+   return true;
+ }
+
+ // no winner yet  return false;
+}
+// Last thought: x's turn is suppose to turn into X win if checkwin is true. This is not happen. Look over function Check win. The bug is in Check win. Also check the placement of gameover = false and numMoves; 
+// Last thought 2; check "if(val0 == 'O' && val1 == 'O' && val2 == 'O') ";
+    
+      </SCRIPT>
+
+    </head>
+
+
+
+    <body>
+    <h1 class="Title"> Tic-Tac-Toe</h1>
+    <h3 style="font-size: 25px" align="center">by Pritam2958</h3>
+       
+    <P ID = "status" class="turns" > X's Turn </P> 
+  
+
+        <INPUT class="game-button" TYPE="BUTTON" ID="0_0" VALUE=" " ONCLICK="squareclicked (this);">
+        <INPUT class="game-button" TYPE="BUTTON" ID="1_0" VALUE=" " ONCLICK="squareclicked (this);">
+        <INPUT class="game-button" TYPE="BUTTON" ID="2_0" VALUE=" " ONCLICK="squareclicked (this);">   
+        <BR>   
+        <INPUT class="game-button" TYPE="BUTTON" ID="0_1" VALUE=" " ONCLICK="squareclicked (this);">
+        <INPUT class="game-button" TYPE="BUTTON" ID="1_1" VALUE=" " ONCLICK="squareclicked (this);">
+        <INPUT class="game-button" TYPE="BUTTON" ID="2_1" VALUE=" " ONCLICK="squareclicked (this);">
+        <BR>
+        <INPUT class="game-button" TYPE="BUTTON" ID="0_2" VALUE=" " ONCLICK="squareclicked (this);">
+        <INPUT class="game-button" TYPE="BUTTON" ID="1_2" VALUE=" " ONCLICK="squareclicked (this);">
+        <INPUT class="game-button" TYPE="BUTTON" ID="2_2" VALUE=" " ONCLICK="squareclicked (this);">
+        <BR>
+        <p></p>
+        <INPUT class="new-game-button" TYPE="BUTTON" ID="NEWGAME" VALUE="New Game" ONCLICK="newgame();">
+    </body>
+</html>
