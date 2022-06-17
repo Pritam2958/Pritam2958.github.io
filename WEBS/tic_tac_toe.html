@@ -62,7 +62,7 @@ function boxClicked(e) {
     spaces[id] = currentPlayer;
     e.target.innerText = currentPlayer;
     if (hasPlayerWon(currentPlayer)) {
-      playText.innerHTML = `${currentPlayer} wins !!`;
+      alert (`${currentPlayer} wins !!`);
       return;
     }
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
@@ -73,37 +73,37 @@ const hasPlayerWon = (player) => {
   
   if (spaces[0] === player) {
     if (spaces[1] === player && spaces[2] === player) {
-      console.log(`${player} wins up top`);
+      alert(`${player} wins up top`);
       return true;
     }
     if (spaces[3] === player && spaces[6] === player) {
-      console.log(`${player} wins on the left`);
+      alert(`${player} wins on the left`);
       return true;
     }
     if (spaces[4] === player && spaces[8] === player) {
-      console.log(`${player} wins on the diagonal`);
+      alert(`${player} wins on the diagonal`);
       return true;
     }
   }
   
   if (spaces[8] === player) {
     if (spaces[2] === player && spaces[5] === player) {
-      console.log(`${player} wins on the right`);
+      alert(`${player} wins on the right`);
       return true;
     }
     if (spaces[7] === player && spaces[6] === player) {
-      console.log(`${player} wins on the bottom`);
+      alert(`${player} wins on the bottom`);
       return true;
     }
   }
 
   if (spaces[4] === player) {
     if (spaces[3] === player && spaces[5] === player) {
-      console.log(`${player} wins on the middle horizontal`);
+      alert(`${player} wins on the middle horizontal`);
       return true;
     }
     if (spaces[1] === player && spaces[7] === player) {
-      console.log(`${player} wins on the middle vertical`);
+      alert(`${player} wins on the middle vertical`);
       return true;
     }
   }
