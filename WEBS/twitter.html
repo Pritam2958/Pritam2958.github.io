@@ -1,1 +1,1701 @@
 <!--code starts here-->
+<!--An attempt to make a fully functional Twitter App's UI Clone-->
+
+<!--Upvote if you like it
+Double Upvote if you don't :p-->
+
+<!--All Credits and Acknowledgements are in the code itself (Options pane->Credits)-->
+<!doctype html>
+<html class="no-js" lang="eng">
+
+<head>
+  <meta charset="utf-8">
+  <title>Twitter App Clone</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type='text/css' href="Untitled-2.css"/>
+    <script type="text/javascript" src="main-2.js"></script>
+    </head>
+<body>
+<!--<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from </div>-->
+    <div class="loader" id="load">
+    <img class="load_bird" src = 'https://i2.wp.com/www.vectorico.com/wp-content/uploads/2018/02/Twitter-Logo-WhiteOnBlue.png?resize=300%2C300'/></div>
+    <div class="login" id="log_page">
+    <div class="log-wrapper">
+        <img id="bird" src="https://www.dropbox.com/s/2q8lmxwdthdjpuu/twitter_bird_logo_2012.svg.png?raw=1" alt="Twitter logo"/>
+        
+        <h2 class="log-head">Log in to Twitter</h2>
+      <form  >
+        <input type="text"
+        name="username" placeholder="email,phone,or username" />
+        
+        <input type="password" name="username" placeholder="Password" />
+        <input type="button"
+               class="log-but"
+               id = "login_close"
+               value="Log-In"/>
+               </form>
+               <span id="log-link-wrap">
+               
+        <a class="log-link" href='#'>Forgot password</a>
+        <a class="log-link log-link2" href="#">SignUp with twitter?</a>
+        </span>
+        </div></div>
+    
+        <div class="side_nav">
+        <div class="my_info">
+            <img class="my_dp" src="https://api.sololearn.com/Uploads/Avatars/8450145.jpg">
+            <h5 class="my_name">A.S.M.</h5>
+            <p class="my_id" style="color:#76898a">@logicredefined</p>
+            
+            <span>
+                <p><b>98 </b><p style="color:#76898a"> following   </p>
+                <p><b>210 </b><p style="color:#76898a"> followers</p>
+            </span>
+        </div>
+            <div class="sub_side_nav">
+            <a href="#" id="cross">✖</a>
+         <ul class="side_list">
+<li><a>👤</a> profile</li>
+           <li><a>📃</a>  Lists</li>
+           <li><a>📕</a>  Topics</li>    
+           <li><a>🔰</a>  Bookmarks</li>   
+           <li><a>⚡ </a>Moments</li>
+          <li id="credit"><a>⚡ </a><b>Credits</b></li>
+           
+           <li style="width:100%;height:5px; border-bottom:1px solid gray;"></li>
+           <li>Settings</li>
+           <li>Privacy</li>
+           <li>Help Center</li>
+                </ul>
+            </div>
+        </div>
+        <div class="main_body main" id="main_wrapper">
+        <div class="head_bar main_head" id="header1">
+            <img id="head_menu" src="https://img.icons8.com/ultraviolet/35/000000/menu.png"/>
+            <img id="head_bird" src="https://www.dropbox.com/s/2q8lmxwdthdjpuu/twitter_bird_logo_2012.svg.png?raw=1" alt="Twitter logo"/>
+<img id="head_settings" src="https://img.icons8.com/office/35/000000/settings.png"/>
+</div>
+        
+    <div id="tweet" >        
+    <p class="tweet_close">x</p>
+    <button class="tweet_button">Tweet</button>
+    <img src="https://api.sololearn.com/Uploads/Avatars/8450145.jpg" class="tweet_pic"/>
+    <textarea class="tweet_area" id="tweets" placeholder="What's Happening"></textarea></div>
+    
+<div class=" feed_body feed page" id="feed_wrapper">
+</div>
+    
+    <div class="trend_body trend page" id="trend_wrapper">
+    <div class="tab_wrap">
+        <h4 class="t_tab for_you">For You</h4>
+            <h4 class="t_tab trending">Trending</h4>
+        <h4 class="t_tab news">News</h4>
+        <h4 class="t_tab  sports">Sports</h4>
+        <h4 class="t_tab entertainment">Entertainment</h4>
+    </div></div>
+    
+    <div class=" notif_body notif page" id="notif_wrapper">
+        <div class="ntab">
+          <h4 class="activity">Activity</h4>  
+          <h4 class="mention" id="mentions">Mentions</h4>  <div class="men_wrap">
+              <h3>Nothing to see here-yet</h3>
+              <p>When someone mentions you in a tweet, You'll know here'</p>
+          </div>
+        </div>
+    </div>
+    <div class="feather push" id="float"><p id="fplus">+</p><img src="https://www.dropbox.com/s/zrwybdv8df00122/pen-feather-black-diagonal-shape-of-a-bird-wing.png?raw=1"></div>
+        
+    <div class=" pc_body pc page" id="pc_wrapper">
+      </div> 
+   </div>
+   <div class="hide_card" id="h_card">
+       
+       <div class="list_wrap">
+       <span id="h_mid"></span>
+           <ul class="h_list">
+               <li>Not interested in this</li>
+               <li>unfollow this page</li>
+               <li>Block this page</li>
+                   
+               <li>Mute this page</li>
+                   
+               <li>Report tweet</li>
+           </ul>
+       </div>
+   </div>
+    <div class="bot_bar bottom" id="bottom_main">
+        <a class="bot_icon home " id="home_icon" index="1" href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="30" height="30"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g class="ic"  fill="#404040" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><path d="M86,9.89c-0.79292,0 -1.58906,0.27273 -2.23063,0.81969l-68.8,58.48c-0.76712,0.65016 -1.20937,1.61583 -1.20937,2.62031v13.76c0,1.3416 0.78115,2.55678 1.99547,3.1175c1.21432,0.56072 2.64332,0.37657 3.66844,-0.49719l66.57609,-56.58531l66.5761,56.58531c0.6364,0.54008 1.42582,0.81969 2.2239,0.81969c0.49192,0 0.98013,-0.10578 1.44453,-0.3225c1.21432,-0.55728 1.99547,-1.7759 1.99547,-3.1175v-13.76c0,-1.00448 -0.44554,-1.97015 -1.2161,-2.62031l-68.8,-58.48c-0.64156,-0.54696 -1.43098,-0.81969 -2.2239,-0.81969zM86,40.66187l-49.29547,41.89813l-5.95281,5.05922l14.03547,70.89625c0.344,1.6168 1.75601,2.75469 3.37281,2.75469h75.68c1.6168,0 3.02881,-1.13789 3.37281,-2.75469l14.03547,-70.89625l-5.95281,-5.05922zM86,64.95015c11.3864,0 20.64,9.2536 20.64,20.64c0,11.3864 -9.2536,20.64 -20.64,20.64c-11.3864,0 -20.64,-9.2536 -20.64,-20.64c0,-11.3864 9.2536,-20.64 20.64,-20.64zM65.36,116.55015h41.28c1.892,0 3.44,1.548 3.44,3.44c0,1.892 -1.548,3.44 -3.44,3.44h-41.28c-1.892,0 -3.44,-1.548 -3.44,-3.44c0,-1.892 1.548,-3.44 3.44,-3.44z"></path></g></svg></a>
+        <a class="bot_icon trends " id="trend_icon" index="2" href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="30" height="30"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g class="ic" fill="#404040" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><path d="M72.24,10.32c-32.26344,0 -58.48,26.21656 -58.48,58.48c0,32.26344 26.21656,58.48 58.48,58.48c12.76563,0 24.56375,-4.11187 34.185,-11.0725l45.2575,45.15l9.675,-9.675l-44.72,-44.8275c8.78813,-10.23937 14.0825,-23.52906 14.0825,-38.055c0,-32.26344 -26.21656,-58.48 -58.48,-58.48zM72.24,17.2c28.54125,0 51.6,23.05875 51.6,51.6c0,28.54125 -23.05875,51.6 -51.6,51.6c-28.54125,0 -51.6,-23.05875 -51.6,-51.6c0,-28.54125 23.05875,-51.6 51.6,-51.6z"></path></g></svg></a>
+        <a class="bot_icon notification " index ="3" id="notif_icon" href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="32" height="32"
+viewBox="0 0 172 172"
+style=" fill:#ff22ff;"><g class="ic" fill="#404040" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z"   fill="none"></path><path d="M86,16.125c-5.9419,0 -10.75,4.8081 -10.75,10.75c0,0.46192 0.10498,0.90283 0.16797,1.34375c-18.58154,4.74512 -32.41797,21.62598 -32.41797,41.65625v48.375c0,3.04443 -2.33057,5.375 -5.375,5.375h-5.375v10.75h38.63281c-0.60889,1.70068 -1.00781,3.48535 -1.00781,5.375c0,8.83935 7.28565,16.125 16.125,16.125c8.83935,0 16.125,-7.28565 16.125,-16.125c0,-1.88965 -0.39893,-3.67432 -1.00781,-5.375h38.63281v-10.75h-5.375c-3.04443,0 -5.375,-2.33057 -5.375,-5.375v-46.86328c0,-20.19824 -13.50049,-38.21289 -32.41797,-43.16797c0.06299,-0.44092 0.16797,-0.88183 0.16797,-1.34375c0,-5.9419 -4.8081,-10.75 -10.75,-10.75zM83.64844,37.625c0.77685,-0.06299 1.55371,0 2.35156,0c0.33594,0 0.67188,0 1.00781,0c17.55273,0.5249 31.24219,15.91504 31.24219,33.76172v46.86328c0,1.88965 0.39893,3.67432 1.00781,5.375h-66.51562c0.60889,-1.70068 1.00781,-3.48535 1.00781,-5.375v-48.375c0,-17.06982 13.14356,-31.03222 29.89844,-32.25zM86,134.375c3.02344,0 5.375,2.35156 5.375,5.375c0,3.02344 -2.35156,5.375 -5.375,5.375c-3.02344,0 -5.375,-2.35156 -5.375,-5.375c0,-3.02344 2.35156,-5.375 5.375,-5.375z"></path></g></svg></a>
+        <a class="bot_icon personal" index ="4" id="pc_icon" href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="24" height="24"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g class="ic" fill="" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><path d="M0,21.5v129h172v-129zM14.33333,35.83333h143.33333v15.67708l-71.66667,35.83333l-71.66667,-35.83333zM14.33333,67.63542l68.53125,34.04167l3.13542,1.56771l3.13542,-1.56771l68.53125,-34.04167v68.53125h-143.33333z"></path></g></svg></a>
+    </div>
+    
+   <link type="text/javascript" href="main.js">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+</body>
+</html>  
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@500&family=Oswald&display=swap');
+*{
+    box-sizing:border-box ;
+    text-decoration:none;
+    outline:none;
+    user-select:none;
+    font-family: Times New Roman,Sans-serif;
+    margin:0;
+    padding:0;
+}
+::-webkit-scrollbar{
+    display:none;
+}
+body{
+    width:100%;
+    height:auto;
+    overflow-x:hidden;
+}
+.loader{
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color:#1DA1F2;
+    top:0;
+    z-index: 22;
+}
+.load_bird{
+    position: absolute;
+    max-width: 50px;
+    max-height: 50px;
+    top:40vh;
+    left:40vw;
+}
+.login{
+display:flex;
+  flex-wrap:nowrap;
+    position:fixed;
+      width:100%;
+        height:100%;
+         margin-left:-10vw;
+          margin-top:-40px;
+           z-index:20;
+            word-wrap:normal;
+}
+.log-wrapper{
+    width:400px;
+    height:400px; 
+    word-wrap:normal;
+    display:flex;
+    flex-direction: column;
+    flex-flow: column;
+    flex-basis:auto;
+    flex-wrap: nowrap; 
+    justify-content:space-around;
+    align-content: center;
+    margin-left: 15vw;
+    margin-top: -5px;
+    z-index:19;
+    filter:saturate(80%);
+ }
+#bird{
+    width: 10%;
+    height: 8%;
+    margin-left: 30vw;
+    margin-top:20vh;
+}
+.log-head{
+    font-family:Hind;
+    margin-left:13vw; 
+    margin-top:5%;
+}
+form{
+    margin:0;
+    padding:0;
+}
+input{
+
+flex-wrap:nowrap;
+    width:310px;
+    height:50px;
+    margin-left:1%;
+    margin-right:2%; 
+    border:none;
+    border-bottom:2px solid rgb(101,119,134);
+    margin-top:8px;
+    background-color:#eff;
+    
+opacity:0.5;
+
+}
+input:focus{
+  border-bottom:3px solid #1DA1F2;  
+   
+}
+input::placeholder{
+     color:#1DA1F2;
+    font-size: 10px;
+    opacity:1 !IMPORTANT;
+    position: relative;
+    top:-12px;
+    padding-left:10px;    
+}
+.log-but{
+    border:none;
+    border-radius:40px;
+    background-color:#1DA1F2;
+    color:white;
+    font-size:20px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity:1;
+}
+.log-but:
+#log-link-wrap{
+    flex-direction:row;
+    flex-flow:row;
+    align-content:center;
+    justify-content:space-between;
+}
+.log-link{
+position:relative;
+left:20px;
+   font-size:12px;
+    margin-left:20px; 
+    margin-top:20px;
+    opacity:0.5;
+    text-decoration:underline ;
+}
+.log-link{ 
+    margin-left:1px;
+    
+}
+#tweet{
+    display:none;
+     position:fixed;
+    min-width: 100vw;
+    min-height: 150vw;
+    top:0;
+    background-color: white;
+    z-index: 9;
+}
+.tweet_area{
+    position:relative;
+    width:80vw;
+    height: 95vw;
+    top:38px;
+    left:55px;
+       border: none;
+    font-size: 20px;
+
+}
+.tweet_area::placeholder{
+    position: relative;
+    font-size: 17px;
+}
+.tweet_pic{
+    position: absolute;
+    width:40px;
+    height: 40px;
+    left:10px;
+    top:60px;
+    border-radius: 50px;
+    z-index: 4;
+}
+.tweet_button{
+    position: absolute;
+    right: 10px;
+    z-index: 5;
+    top:10px;
+    border-radius: 10px;
+    width: 60px;
+    height: 25px;
+    color:whitesmoke;
+    background-color:#1fa1d2;
+    border:none;
+    box-shadow:2px 1px 8px #43bde6;
+    
+}
+.tweet_close{
+    position: relative;
+    left:20px;
+    font-weight: 600;
+    font-size: 23px;
+    left:10px;
+}
+.main_body{
+    display:none;
+    width:100vw;
+    max-height: 3600px;
+    overflow-y: hidden;
+}
+.feed{
+    display:flex;
+}
+.trend{
+    display:none;
+    width:100%;
+    background-color: #efeded
+}
+.notif{
+    display:none;
+}
+.pc{
+    display:none;
+}
+.head_bar{
+    position:fixed;
+    box-sizing:border-box;
+    display:none;
+    flex-direction: row;
+    width:100%;
+    height:70px;
+    top:0;
+    margin:0 0px;
+    padding:0;
+    background-color:#f7fcfc;
+    z-index:04;
+}
+#head_bird{
+    align-self: center;
+    margin-top:15px;
+    margin: 10px 35vw ;
+    max-width:10%;
+    max-height:25px;
+    z-index:5;
+}
+#head_menu{
+    max-width: 30px;
+    max-height: 28px;
+    margin-left: 10px;
+    margin-top: 21px;
+}
+#head_settings{
+    position: fixed;
+    max-height: 30px;
+    max-width: 30px;
+    margin-top: 21px;
+    right:5vw;
+}
+/*side navigation*/
+
+.side_nav{
+    position:fixed;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:300px;
+    max-height:90vh;
+    min-height:75vh;
+    padding-left:20px;
+    background-color:white;
+    opacity:1;
+    top:70px;
+    left:-300px;
+    z-index:3;
+    
+overflow-y:scroll;
+}
+.my_info{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    width:100%;
+    height:150px;
+    border-bottom:1px solid #efeded;
+    margin-left:-10px;
+}
+.my_dp{
+    width:50px;
+    height:50px;
+    border-radius:50px;
+    align-self:flex-start;
+}
+.my_info span{
+    display:flex;
+    justify-content:space-even;
+    font-size:15px;
+    margin-left:5px;
+    white-space:pre;
+}
+
+
+.side_nav ul a{
+      filter:invert(50%);
+      opacity:0.5;
+      }
+      .side_list ul{
+          margin-top:-40px;
+      }
+.side_list li{
+    list-style-type:none;
+    color:black;
+    margin-left:10px;
+    margin-top:8px;
+    
+}
+.side_list li:nth-child(6){
+
+    cursor:pointer;
+}
+.side_list span{
+position:relative;
+    border-bottom:1px solid gray;
+    
+}
+#cross{
+    position:absolute;
+    right:20px;
+    top:10px;
+}
+
+/***bottom bar and stuff***/
+
+.bot_bar{
+    display: none;
+    position:fixed!important;
+    width:100%;
+    height:60px;
+    margin:0 0px;
+    bottom:0;
+    border:.2px solid #aaa;
+    background-color:#f7fcfc;
+    z-index:04;
+}
+.bot_icon{
+display:inline;
+    margin-left:75px;
+    margin-top:30px;
+}
+a:nth-child(1){
+    margin-left:20px;
+    
+}
+/*******feed page********/
+
+.feed_body{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    align-content:flex-start;
+    box-sizing:content-box ;
+    top:100px;
+    width:100%;
+    min-height:3700px;
+    margin-top:72px;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    padding:0;
+    z-index:1;
+    background-color:#fff;
+}
+.feed_card{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    margin:60px 0 0 0;
+    justify-content:space-between;
+    align-items:flex-start;
+    word-wrap:wrap;
+    width:100%;
+   height:auto;
+    line-height: 20px;
+   max-height:600px;
+    z-index:2;
+    border-bottom:0.4px solid #e6eded;
+}
+.feed_card:nth-child(12){
+order:-10;
+}
+
+
+div .feed_card .usrname{
+    margin-right:55px;
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+
+.sub_feed{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    align-content:flex-start;
+    flex-wrap:nowrap;
+    width:80%;
+    height:auto;
+    max-height:590px;
+}
+.dp_wrap{
+    display:flex;
+    flex-direction:column;
+    width:20%;
+    align-content:stretch;
+    margin-top:-60px;
+    padding-left:20px;
+}
+.dp{
+position:relative ;
+    align-self:flex-start;
+    margin-left:-10px;
+     top:20px;
+    max-width:60px;
+    max-height:58px;
+    border-radius:50%;
+    z-index:3;
+
+}
+.feed_img{
+    max-width:60vw;
+    min-width: 48vw;
+    max-height:180px;
+    border:1.3px solid #e6eded;
+    border-radius:6px;
+    margin-right:5px;
+}
+.usrname{
+    display:flex;
+    max-width:90vw;
+    min-width:80vw;
+    flex-direction:row;
+    max-height:20px;
+    flex-wrap:nowrap;
+    text-align:left;
+    margin-top:-40px;
+    margin-bottom:5px;
+    justify-content:space-around;
+    align-items: baseline;
+    margin-left:5px;
+}
+.f_time{
+    margin-top: 2px;
+    filter: invert(50%);
+}
+.feed_text{
+    align-self:stretch;
+    text-align:left;
+    margin-top:8px;
+    width:auto;
+    max-width:300px;
+      padding:5px;
+    word-wrap:wrap;
+}
+.id_s{
+    min-width: 20px;
+    text-align:right;
+    align-self:center;
+    font-size:7px important!;
+    color:rgba(40,40,40,0.5);
+    
+}
+.feed_icon_cont{
+    display:flex;
+    flex-direction:row;
+    width:70vw;
+    height:21px;
+    margin-left:-15vw;
+    align-self:flex-start;
+}
+.feed_bot_icon{
+    filter:hue-rotate(180deg);
+    min-width:15px;
+    height:15px;
+    margin-top:1.5vw .5vw;
+    margin-left:60px;
+    opacity:0.9;
+    
+}
+div .feed_icon_cont .feed_bot_icon:nth-child(2){
+    width:15px;
+    
+}
+div .feed_icon_cont .feed_bot_icon:nth-child(3){
+     
+}
+div .feather{
+position:fixed;
+border-radius:50px;
+bottom:70px;
+right:20px;
+background-color:#1DA1F2;
+width:50px;
+height:50px;
+opacity:1;
+box-shadow:4px 2px 8px #43bde6;
+z-index:06;
+}
+.feather img{
+position:relative;
+    width:20px;
+    height:28px;
+top:-5px;
+left:18px;
+filter:invert(98%);
+}
+#fplus{
+    position:relative;
+    text-align:center;
+    top:8px;
+    left:-6.8px;
+    margin:0;
+    color:white;
+}
+.tick{
+    width:20px;
+    height:20px;
+    align-self:center;
+    margin-right:5px;
+    margin-top:-1px;
+}
+
+
+.bot_icon{
+    margin-left:60px;
+    margin-top:0px;
+}
+.drop{
+    align-self:flex-end;
+    max-width:15px;
+    max-height:15px;
+    margin-right:6px;
+    margin-top:1px;
+}
+em{
+    color:blue;
+}
+/********notif page******/
+
+.notif_body{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    align-content:flex-start;
+    box-sizing:content-box ;
+    top:100px;
+    width:100%;
+    height:1350px;
+    margin-top:122px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    padding:0;
+    background-color:#fefefe;
+    z-index:1;
+}
+.notif_card{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    margin:10px 0 10px 0;
+    justify-content:space-between;
+    align-items:flex-start;
+    align-content:space-between;
+    word-wrap:wrap;
+    width:100%;
+   height:auto;
+   max-height:600px;
+    z-index:2;
+    border-bottom:0.4px solid rgba(80,80,80,0.2);
+}
+
+.nstar_wrap{
+display:flex;
+flex-direction:column;
+    max-width:30%;
+    min-height:100%;
+    
+}
+.nstar{
+    max-width:30px;
+    max-height:30px;
+    align-self:flex-end;
+    margin-left: 20vw;
+    transform: rotate(45deg);    
+}
+.sub_notif{
+    display:flex;
+    flex-direction:column;
+    align-content:center;
+    max-width:70%;
+}
+.nhead{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    min-width:300px;
+}
+.ndp{
+     align-self:flex-start;
+    max-width:30px;
+    max-height:30px;
+    border-radius:50%;
+    z-index:3;
+}
+.nhead .drop{
+    margin-left:100px;
+}
+.hide_card{
+position:fixed;
+width:98%;
+height:220px;
+    border:1.4px solid rgba(40,40,40,0.5);
+    border-radius:16px 16px 0 0;
+    bottom:-220px;
+    left:5px;
+    text-align:left;
+    z-index:3;
+    opacity:1;
+    background-color:white;
+    overflow:none;
+}
+.hide_card ul li{
+    list-style-type:none;
+    margin-left:40px;
+   margin-top:15px; color:rgba(10,20,10,0.5);
+}
+.hide_card ul li:nth-child(1){
+    margin-top: 30px;
+}
+.list_wrap{
+    margin-top:0px;
+    margin-bottom:20px;
+}
+#h_mid{
+    position:absolute;
+    bottom:200px;
+    left:150px;
+    background-color:grey;
+    border-radius:40px;
+    width:40px;
+    height:8px;
+    z-index:6;
+}
+.ntab{
+    position:absolute;
+    top:70px;
+    width:100%;
+    min-height:50px;
+    display:none;
+    flex-flow:row wrap;
+    background-color:white;
+    justify-content:space-even;
+    color:#1DA1F2;
+    text-align:center;
+}
+.ntab h4{
+    margin-top:10px;
+    margin-left:0px;
+    }
+    .mention{
+    width:50%;
+    border-left:1px solid #eeeded;
+        min-height: 40px;
+}
+
+.activity{
+width:50%;
+text-align:center;
+    border-bottom:3px solid #1DA1F2;
+    min-height: 30px;
+} 
+.men_wrap{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    align-content:flex-start;
+    width:100%;
+    height:400px;
+    background-color:#c3cad6;
+    color:black;
+    padding-top:100px;
+    opacity: 1;
+    z-index: 3;
+};
+.men_wrap p{
+    color:#8b98ad;
+}
+.tab_wrap{
+    display:none;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-content:flex-start;
+    bor
+    align-items:flex-start;
+    position:absolute;
+    top:72px;
+    max-width:100%;
+    height:50px;
+   color:#1da1f2;
+    background-color:white;
+    overflow-x:scroll;
+    box-shadow:1px 0.2px 5px #43bde6;
+    margin-left:-10px;
+}
+.t_tab{
+position:relative;
+min-width:160px;
+height:50px;
+text-align:center;
+align-self:center;
+border-left:1px solid #eeeded;
+}
+.for_you{
+    margin-left:360px;
+    border-bottom:3px solid #1DA1F2;
+}
+.showcase_wrap{
+    max-width: 80vw;
+    max-height:25vw;
+    margin-top: 36vw;
+    border:1px solid transparent;
+   border-radius: 10px;
+    overflow: hidden;
+}
+.showcase{
+    min-width: 80vw;
+    max-width: 80vw;
+    max-height:25vw; 
+}
+.trend_body{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    align-content: space-between;
+    margin-left: 10px;
+    margin-bottom: 50px;
+}
+.trend_wrap{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    margin:60px 0 0 0;
+    justify-content:space-between;
+    align-items:flex-start;
+    word-wrap:wrap;
+    width:100%;
+   height:auto;
+    line-height: 20px;
+   max-height:600px;
+    background-color: white;
+    z-index:2;
+    margin-top: 0;
+    border-bottom:0.4px solid #e6eded;
+    
+}
+.trend_wrap p{
+    color:#999;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+.trend_wrap .drop{
+position:absolute;
+    align-self: flex-end;
+    margin-right: 180px;
+    margin-top: -20px;
+    right:-110px;
+    width: 14px;
+    filter: invert(40%);
+}
+.happen_wrap{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    background-color: white;
+margin-left:0;
+    justify-content:space-between;
+    align-items:flex-start;
+    word-wrap:wrap;
+    width:100%;
+   height:auto;
+    line-height: 20px;
+   max-height:600px;
+    z-index:2;
+    margin-bottom:0;
+    border-bottom:0.4px solid #e6eded;
+}
+.h_span{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    max-width:200px;
+    min-width:100px;
+    justify-content:space-between;
+    align-content:stretch;
+     color:#999;
+    font-size: 15px;
+}
+.h_container{
+display:flex;
+flex-flow:column wrap;
+max-width:65vw;
+
+
+}
+.h_img_wrap{
+    max-width:30vw;
+    max-height:40vw;
+    position:relative;
+    margin-left:2px;
+    right:20px;
+    border:.5px solid #aaa;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:3vw;
+    margin-top: 3vw;
+}
+.h_img{
+    max-width:30vw;
+    max-height:50vw;
+    min-height:50vw;
+}
+.happen_header{
+    font-family: Hind;
+    width: 100vw;
+    height:10vw;
+    border-bottom: 1px solid #efeded;
+    text-align:left;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: white;
+    margin-top: 3vw;
+    margin-left: -8px;
+}
+.trending_header{
+    font-family: Hind;
+    width: 100vw;
+    height:10vw;
+    border-bottom: 1px solid #efeded;
+    text-align:left;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: white;
+    margin-top: 3vw;
+    margin-left: -8px;
+}
+.pc_body{
+    width: 100%;
+    display: flex;
+    flex-flow:column wrap;
+    max-height: 2500px;
+    padding-bottom:60px;
+    
+}
+.p_wrap{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    margin:10px 0 20px 0;
+    justify-content:space-between;
+    align-items:flex-start;
+    align-content:space-between;
+    word-wrap:wrap;
+    width:100%;
+   min-height:120px;
+   max-height:600px;
+    z-index:2;
+    border-bottom:0.4px solid rgba(80,80,80,0.2);
+}
+.p_wrap:nth-child(1){
+    margin-top:80px;
+}
+.pic_wrap{
+    display: flex;
+    width:30vw;
+    align-self: flex-start;
+    justify-content: center;
+}
+.pic{
+    max-width: 80px;
+    max-height: 60px;
+    border-radius: 50px;
+}
+.p_container{
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 65vw;
+    flex-grow: 3;
+    margin-right: 15px;
+    min-
+height:50px;
+}
+.p_span{
+    display: flex;
+    margin-bottom: 6px;
+    justify-content: space-between;
+    word-break:none;
+}
+.p_name{
+    font-size: 17px;
+}
+.p_id{
+    color: dimgrey;
+}
+.p_time{
+    color:dimgrey;
+}
+.p_msg{
+    font-size: 15.6px;
+    font-weight: 500;
+    word-wrap:break-word;
+}
+.pic:nth-child(6){
+    box-sizing:border-box;
+    min-height:90px;
+}
+.search{
+    position: fixed;
+    top:10px;
+    left:10vw;
+    z-index: 81;
+    opacity: 1;
+    
+}
+input[type = "search"]{
+    display:none;
+       max-width: 45vw;
+    min-width:32vw;
+    max-height: 10vw;
+    margin-left:10vw;
+border-radius: 30px;
+    filter: contrast(80%) saturate(70%);
+    
+}
+</style>
+<script>
+window.onload = function(){
+    
+alert("No need to add credentials, Press Login")
+//Loader ----------
+ let loader,logForm,main_body,login,head_bar,bottom_bar;
+
+loader = document.querySelector(".loader");
+ loader.style.display="none";
+  logForm= document.querySelector(".login");
+    logForm.style.display="block";
+ 
+main_body =    document.querySelector(".main_body");
+login = document.querySelector("#login_close");
+head_bar = document.querySelector(".head_bar");
+bottom_bar = document.querySelector(".bot_bar");
+ 
+      login.onclick = function(){
+logForm.style.display="none";
+main_body.style.display="block";
+head_bar.style.display="flex";
+bottom_bar.style.display="block";
+    };
+    
+    
+  
+//All Variables
+  let 
+  //feed page variables----------
+   feed,div,trend,noti_f,p_c,switcher,sub_feed,dp_wrap,user,img,dp,id,txt,topic,icon_cont ,page,hr,atRate,content,contents,icon_add,tick,t,dropClick;
+ //------------------------------
+ //notification variables
+ let notif_wrap,sub_notif,nstar_wrap,nhead,ntext,nstar;
+ //------------------------------
+   // trending page variables-------
+ let showcase_wrap, showcase, trend_wrap, t_container, trend_head, t_drop, t_hash, tweet_count, happen_wrap, h_container, h_span, h_name, t_tick, t_time, h_headline, h_img, h_img_wrap;
+
+    //-----------------------
+//Message page variables------
+    let p_wrap,pic,pic_wrap,p_container,p_span,p_name,p_id,p_time,p_msg;
+    
+//----------------------------
+//Feed Page Array
+ topic = new Array("","As the world is coping with the outbreak of COVID-19, We must not forget those without a voice. Let's make sure stray & abandoned animals are treated with care and compassion. <em>Help @amtmindia</em> via <em>https://t.co/IoZC3Y1mcI</em>","T 3405 - .... अच्छा , एक और बात तय है , इन दिनों  ... जब फ़ोन आए , तो ये भी नहीं कहा जा सकता की ' साहेब घर में नहीं है ' !!!😜 <em> https://t.co/NisaBoIO6p</em>","There’s an army of people working day and night to keep us safe, our families safe. Lets together say <em>#DilSeThankYou</em> to them because that’s the least we can do. <em>@mybmc</em><em> @MumbaiPolice</em>","Day 13. Starting to look like the Trivago guy: a bestubbled, transient loner who just wants to help you find cheap online travel packages. Someone should check on the Trivago guy.","Simply divine ✨ Happy Bday mommy 💜 ","So honoured to be a part of this prestigious list. Thank you <em> @BWBusinessworld </em>for considering me for this! Yay!","Knowledge of what truly matters in life is a blessing.","71 लाख राशन कार्ड धारकों को हम मुफ़्त राशन दे चुके हैं। जिनके पास राशन कार्ड नहीं है ऐसे 3.5 लाख लोगों को भी राशन दिया जा चुका है।ऐसे 31 लाख लोगों ने मुफ़्त राशन के लिए अपलाई किया है, उन सबको राशन मिलेगा।दिल्ली में किसिको भी राशन या भोजन की कमी नहीं होगी इसकी मैं गारंटी लेता हूं।","Save the planet? <br/>How can we be so arrogant? <br/>The planet is, was and always will be stronger than us. We can’t destroy it;<br/> if we overstep the mark, the planet will simply erase us from its surface and carry on existing.<br/>(Coelho, The Winner stands alone)","Namashkar Mitro<br/>Me aaj aap sabhi se nivedan karna chahunga,<br/>ki <b>25 April</b> ko,<br/>Theek <b>11 P.M.</b> bje,sabhi log apni apni balcony me Jayen<br/><em>Aur kood jayen</em><br/>Jai Hind","Just here to say Im alive and well.Also,if things work out and harmony is restored, I might start giving coaching to IIT-JEE Aspirants,Or maybe a little bit more<br/> For more info contact on this number-[<b>'e¹²','log1772.23','|√eπ|','√(1+ZT)-1/(√1+ZT)+T<sub>k</sub>=nc',<br/>'E=MC²'</b>]");
+  
+  id = new Array("","Shahrukh Khan","Amitabh Bacchan","Akshay Kumar","Jim Carrey","Shraddha Kapoor","Prajakta Koli","Virat Kohli","Arvind Kejriwal","paulo Coelho","Narendra Modi","Einstien Albert");
+  
+ atRate = new Array("","@Iamsrk","@SrBachchan","@AkshayKumar","@JimCarrey","@ShraddhaKapoor","@IamMostlySane","@iamVkohli","@ArvindKejriwal","@PauloCoelho","@narendramodi","@Einstien");
+ 
+ dp = new Array("","https://pbs.twimg.com/profile_images/661679664/keep_it_onn.jpg","https://pbs.twimg.com/profile_images/1138177088136011776/Rnp146CU.jpg","https://pbs.twimg.com/profile_images/1085067824840822785/ychTUtB8.jpg","https://pbs.twimg.com/profile_images/866987562027692032/Ik5vMpOQ.jpg","https://www.dropbox.com/s/ou60hs2utwtyvik/EW_8NrPXQAEls-b.jpg?raw=1","https://pbs.twimg.com/profile_images/1130513717823598592/MKhcAT03.jpg","https://pbs.twimg.com/profile_images/1192077703609868289/huwMRG1W.jpg","https://pbs.twimg.com/profile_images/945853608389574656/REH_LpUJ.jpg","https://pbs.twimg.com/profile_images/1049667241166471168/i8pUC23c.jpg","https://pbs.twimg.com/profile_images/1134082549041393672/QbihPzrL.png","https://pbs.twimg.com/profile_images/433000823/einstein.jpg");
+ contents = new Array("","https://www.dropbox.com/s/cx2xmg9o52tecsk/IMG_20200418_232110.jpg?raw=1","https://www.dropbox.com/s/q5ssvt77i0bf34d/IMG_20200418_234756.jpg?raw=1","https://www.dropbox.com/s/uvl9pz5kyelv5gn/IMG_20200419_012515.jpg?raw=1","https://www.dropbox.com/s/el7e58nr458d4ed/IMG_20200418_234556.jpg?raw=1","https://www.dropbox.com/s/du8488a3ta4czqq/IMG_20200419_004125.jpg?raw=1","https://www.dropbox.com/s/9lwbluvhzp2rswe/IMG_20200419_012402.jpg?raw=1","https://www.dropbox.com/s/kx9pdj20an5l1r9/IMG_20200419_003742.jpg?raw=1","","","","");
+icons = new Array("https://img.icons8.com/metro/15/000000/topic.png","https://img.icons8.com/material-rounded/24/000000/retweet.png","https://img.icons8.com/white/15/ff0000/hearts.png","https://img.icons8.com/small/16/000000/share.png",
+//drop-down
+"https://img.icons8.com/android/24/000000/expand-arrow.png");
+t = "https://www.dropbox.com/s/nvb70nk2rs2x8mk/iconfinder_tick_blue_619551.png?raw=1" ;
+let times = ["1m","1h ago","1h ago","2h ago","5h ago","6h ago","6h ago","7h ago","10h ago","1d ago","3d ago","3d ago","3d ago","3d ago","4d ago"];    
+
+ //Trend Arrays--------------------
+ let trends = ["#KejriwalShowsTheWay","#IrrfanKhan","#TaskNiMIla","#NoSchoolFeeQ1","#ExamHatao","#AskPoonam"];
+ let trend_heading = ["Politics.Trending","Entertainement.Trending","Trending in India","Politics.Trending","Trending in India","Entertainement.Trending"];
+ let t_count = ["10.23k Tweets","20.8k Tweets","14k Tweets","15,240 Tweets","!0.56k Tweets","24k Tweets"];
+ let happen_name = ["COVID-19","Times Of India","News18.com","PinkVilla","moneycontrol","World news"];
+ let h_news = ["Coronavirus: EU Leaders pledge to raise billions of Dollars to find Vaccine","Armed Forces Salute India's CoronaVirus Warriors","Desperate to get home, 18 people found in travelling a Cement mixer","Happy Birthday Anushka Sharma","Stock Market updates,now Serving","Kim Jong-Un is alive , North Korean media reports."];
+ let h_images = ["https://www.bmi.bund.de/SharedDocs/bilder/EN/schmuckbilder/bevoelkerungsschutz/corona-labor.jpg?__blob=poster&v=3","https://www.dropbox.com/s/dv6l81tqngspycr/download.jpg?raw=1","https://www.dropbox.com/s/ox01g9wwzim9tbb/Indore-18-Migrants-Found-In-Cement-Mixer-They-Were-Trying-To-Reach-Lucknow.jpg?raw=1","https://www.dropbox.com/s/do8ht3xf500b9g5/anushka.jpg?raw=1","https://www.dropbox.com/s/qzp3kq74l4kkvo8/stocks-cash-finance-money-banking.jpg?raw=1","https://www.dropbox.com/s/fr2ardqsw76mnvp/waste.jpg?raw=1"];
+ 
+//Message Array-------
+    
+let pictures = [//tanay
+"https://www.sololearn.com/avatars/f8149758-98c5-46bb-8064-27e0fda8f48f.jpg" ,
+//satnam
+"https://api.sololearn.com/Uploads/Avatars/9233826.jpg" ,
+//zack
+"https://api.sololearn.com/Uploads/Avatars/17292663.jpg" ,
+//rishabh
+"https://api.sololearn.com/Uploads/Avatars/8797547.jpg" ,
+//sudeep
+"https://api.sololearn.com/Uploads/Avatars/8843885.jpg" ,
+//anmol
+"https://assets.cdn.moviepilot.de/files/1287dac94550ff293c94e3ab957c052cba9eb651d44d4eb8ebfe1ab05210/fill/1024/492/wonder%20woman%202.jpg" ,
+//skr
+"https://api.sololearn.com/Uploads/Avatars/17665461.jpg" ,
+//sam
+"https://api.sololearn.com/Uploads/Avatars/17416214.jpg" ,
+//akr
+"https://api.sololearn.com/Uploads/Avatars/17786309.jpg" ,
+//nilesh
+"https://api.sololearn.com/Uploads/Avatars/17194531.jpg" ,
+
+//sudarshan
+"https://api.sololearn.com/Uploads/Avatars/4714357.jpg" ,
+//avd
+"https://api.sololearn.com/Uploads/Avatars/1577560.jpg" ,
+//virat
+ "https://api.sololearn.com/Uploads/Avatars/14875620.jpg" ,
+//coder
+"https://api.sololearn.com/Uploads/Avatars/11159966.jpg" ,
+//rose
+"https://api.sololearn.com/Uploads/Avatars/6241792.jpg" ];
+let people = ["Tanay","Satnam Singh","Zack","Rishabh Singh","Sudeep Jaiswal","Anmol Advani","Skr","Prince Sam","Akr","Nilesh UK","Sudarshan Rai","AVD","Virat","Coder","Rose"];
+    
+let peopleId = ["@Bawaa_li","@Masum.Sher","@Raja.saab","@bookiya","@Mars_melow","@Hmmmm","@Black.heart","@Aashiq.af","@seriousSnape","@bawa_ra","@Busyhu","@Thor.ki","@Growth101","@TheChosen.JSON","@Gulabjal"];
+let messages = ["Yahi to jeevan ka sar hai","Jo bole So nihal, Satsriakal!!","mujhsa shareef noob kaha milega tumhe sansar me","Books give you meaning, of words you never knew before.","Opened Ae , Ps and Android Studio together, You can guess what happened next :(","F.R.I.E.N.D.S. is truely the best Show ever!!","I dived into an O.S., and got stuck there, now I haunt everybody who uses my System 👻","Me Bill Gates ko Chai bana ke pilaunga, kadak wali","Tension mat lo, me sambhal lunga","Me himmat nhi harunga bilkul","ye wala Server theek kr diya, dusra dekh ke ata hu","Talk to me in hindi , I dont kn0w english","Teri udaan tere pankho ke size se nahi, tere Hausle tey karenge","My didi ,is MY didi. None of your Didi"," Black Heart is my favorite"];
+    
+
+//id name limit function
+ function limit(array ,index){
+     
+  return array.slice(0,index).concat("...");
+  }
+  
+ //page switch function
+    feed = document.querySelector("#feed_wrapper");
+    page = document.querySelectorAll(".page");
+    switcher = document.querySelectorAll(".bot_icon");
+ let l = document.querySelector(".tab_wrap");
+    page[0].style.display = "flex";
+      
+      for(let i = 0;i < switcher.length;i++){
+    
+    switcher[i].onclick = function(){
+    for(let i = 0;i < page.length;i++){
+        page[i].style.display = "none";
+        notifMake();
+        }
+   page[i].style.display = "flex";
+   l.style.display = "flex";
+    }
+}
+//bottom icon color function
+
+const wrap = document.querySelector(".feed_card");
+let ic_c="#1DA1F2";
+let bot = document.querySelectorAll(".bot_icon");
+
+for(let a = 0; a<bot.length;a++){
+
+bot[a].onmouseup= () =>{
+document.querySelectorAll(".ic")[a].style.fill = ic_c;
+ }   
+ bot[a].onmouseout= () =>{
+document.querySelectorAll(".ic")[a].style.fill = "#404040" }
+
+};
+
+//****feed DOM creation*****
+function feedmake(i,lenth){
+    
+for(;i<=lenth;i++){
+ 
+    div = document.createElement("DIV");
+    img = document.createElement("IMG");
+    user = document.createElement("H5");
+    text = document.createElement("P");
+    content = document.createElement("img");
+    sub_feed = document.createElement("div");
+       dp_wrap = document.createElement("div")
+    id_s = document.createElement("p");
+     icon_cont =
+  document.createElement("DIV");
+  tick = document.createElement("IMG");
+  drop = 
+  document.createElement("IMG");
+    f_time = document.createElement("P");
+  
+ 
+       div.className = "feed_card"; 
+       dp_wrap.className="dp_wrap";
+       sub_feed.className = "sub_feed";
+       img.className = "dp";
+       user.className ="usrname";
+       text.className = "feed_text" ;  
+       tick.className = "tick";
+       content.className = "feed_img";
+id_s.className = "id_s";
+       icon_cont.className = "feed_icon_cont";
+       drop.className = "drop";
+       f_time.className = "f_time";
+    
+    text.innerHTML = topic[i];
+    user.innerHTML = id[i];
+    tick.src="https://www.dropbox.com/s/nvb70nk2rs2x8mk/iconfinder_tick_blue_619551.png?raw=1" ;
+    img.src =dp[i];
+    id_s.innerHTML = limit(atRate[i],4);
+    drop.src = icons[4];
+    content.src =contents[i];
+    f_time.innerHTML = times[i];
+           
+    feed.appendChild(div);
+    div.appendChild(dp_wrap);
+dp_wrap.appendChild(img);    div.appendChild(sub_feed);  
+    
+    sub_feed.appendChild(user);
+    
+    user.appendChild(tick);
+    
+    user.appendChild(id_s);
+    
+    user.appendChild(f_time);
+    
+    user.appendChild(drop);
+    
+sub_feed.appendChild(text);
+    sub_feed.appendChild(content);
+ //like-share icons   
+    for(let a = 0;a<=icons.length-2;a++){
+     icon_add = document.createElement("img");
+     icon_add.src = icons[a];
+    
+  icon_add.className = "feed_bot_icon";  
+
+      icon_cont.appendChild(icon_add);
+
+sub_feed.appendChild(icon_cont );
+downNav();
+        };
+    }
+};
+    
+    
+//--Side navigation menu------    
+ let oSlide = document.querySelector(".side_nav");
+    let option = document.querySelector("#head_menu");
+    let cross = document.querySelector("#cross");
+    let pos_x = -300;
+  option.onclick = function()
+{
+      let sideClick =     setInterval(moveLeft,100);
+    function moveLeft(){
+    if(pos_x==0){
+       clearInterval(sideClick);
+             }
+     else{
+        pos_x+=100; oSlide.style.left = pos_x + 'px';  
+          }
+      }
+    
+}
+    cross.onclick = function()
+{
+     let sideClick1 =     setInterval(moveRight,100);
+     
+    function moveRight(){
+    if(pos_x==-300){
+       clearInterval(sideClick1);
+             }
+     else{
+        pos_x-=100; oSlide.style.left = pos_x+'px';  
+          }
+          
+      }
+}
+
+
+
+/***notification DOM part**/
+function notifMake(){
+    let notif_len = atRate.length-1;
+noti_f = document.querySelector(".notif_body");
+
+for(var i=1;i<=notif_len ;i++){
+    notif_wrap =document.createElement("DIV");
+    nstar_wrap =
+document.createElement("DIV");   
+    nstar = document.createElement("img");
+    sub_notif = document.createElement("DIV");
+    ndp = document.createElement("img");
+    nhead = document.createElement("h6");    
+    ntext = document.createElement("p"); 
+    ndrop = document.createElement("img");
+    notif_wrap.className = "notif_card";
+    sub_notif.className ="sub_notif";
+    n_time = document.createElement("p");
+    
+nstar_wrap.className = "nstar_wrap";
+ndrop.className = "drop";
+nstar.className = "nstar";
+nhead.className = "nhead";
+ndp.className ="ndp";
+ntext.className = "ntext";
+n_time.className = "f_time";
+    
+    nstar.src = "https://www.dropbox.com/s/15z767ys5zu1ylr/5572-200%20%281%29.png?raw=1"
+    ndp.src = dp[i]
+    ndrop.src=icons[4];
+    nhead.innerHTML = id[i];
+    ntext.innerHTML = limit(topic[i],85);
+    n_time.innerHTML = times[i];
+    
+    noti_f.appendChild(notif_wrap);
+    notif_wrap.appendChild(nstar_wrap);
+    nstar_wrap.appendChild(nstar);
+    notif_wrap.appendChild(sub_notif);
+    
+    sub_notif.appendChild(ndp);
+    sub_notif.appendChild(nhead);
+    nhead.appendChild(n_time);
+    nhead.appendChild(ndrop); sub_notif.appendChild(ntext);
+    
+    let men_page = document.querySelector(".men_wrap");
+    let act = document.querySelector(".activity")
+    let mention = document.getElementById("mentions");
+    
+  mention.addEventListener("click",ment);
+    function ment(){
+        mention.style.borderBottom ="3px solid #1DA1F2";
+    
+ act.style.borderBottom = "0px solid #1DA1F2";
+notif_wrap.style.display = "none";
+men_page.style.display = "flex" ;  
+    }
+    act.onclick = function(){
+        act.style.borderBottom = "3px solid #1DA1F2";
+      mention.style.borderBottom = "0px solid #1DA1F2";
+          notif_wrap.style.display = "flex" ;     
+        men_page.style.display = "none" ;    
+    };
+    
+downNav();
+        }
+}
+ function trendMake(){
+trend = document.querySelector("#trend_wrapper");
+
+//Showcase Image 
+    showcase_wrap = document.createElement("DIV");
+    showcase = document.createElement("IMG");
+    
+    showcase_wrap.className = "showcase_wrap";
+     showcase.className = "showcase";
+     
+     showcase.src="https://www.dropbox.com/s/c2djp3q4b1igdla/photo-1584483766114-2cea6facdf57.jpg?raw=1";
+     
+     trend.appendChild(showcase_wrap);
+     showcase_wrap.appendChild(showcase);
+ 
+    let heading_t = document.createElement("Div");
+let heading_trend = document.createTextNode("Trending Tweets");
+    heading_t.className = "trending_header";
+    heading_t.appendChild(heading_trend);
+trend.appendChild(heading_t);
+for(let i = 0; i <=5; i++)
+{
+
+//Trending sub part of trends
+    trend_wrap = document.createElement("DIV");
+   t_container  = document.createElement("DIV");
+   trend_head = document.createElement("P");
+    t_drop = document.createElement("IMG");
+    t_hash = document.createElement("H4");
+    tweet_count = document.createElement("P");
+    
+    trend_wrap.className = "trend_wrap";
+    t_container.className = "t_container";
+       trend_head.className = "trend_head";
+     t_drop.className = "drop";
+       
+    //   t_drop.className = "t_drop";
+      
+       t_hash.className = "t_hash";
+       tweet_count.className = "tweet_count";
+     trend_head.innerHTML = trend_heading[i];
+    
+    t_drop.src = icons[4];
+    
+    t_hash.innerHTML = trends[i];
+    
+    tweet_count.innerHTML = t_count[i];
+     
+    trend.appendChild(trend_wrap);
+     
+    trend_wrap.appendChild(trend_head);     
+    trend_wrap.appendChild(t_drop);
+    trend_wrap.appendChild(t_hash);
+    trend_wrap.appendChild(tweet_count);
+    
+            }
+     
+    //Whats Happening Part of Trends
+ let heading_h = document.createElement("Div");
+let heading_text = document.createTextNode("What's Happening");
+    heading_h.className = "happen_header";
+    heading_h.appendChild(heading_text);
+trend.appendChild(heading_h);
+for(let i = 0; i <=5; i++)
+{
+      happen_wrap = document.createElement("DIV");
+   h_container  = document.createElement("DIV");
+   h_span = document.createElement("SPAN");
+    h_name = document.createElement("P");
+    h_tick = document.createElement("IMG");
+    h_time = document.createElement("p");
+    h_headline = document.createElement("h4");
+    h_img_wrap = document.createElement("DIV");
+    h_img = document.createElement("IMG");
+    
+        happen_wrap.className = 'happen_wrap';
+        h_container.className = "h_container";
+        h_span.className = "h_span";
+        h_name.className = "h_name";
+        h_time.className = "h_time";
+        h_tick.className = "tick";
+        h_headline.className = "h_headline";
+        h_img.className = "h_img";
+        h_img_wrap.className = "h_img_wrap";
+        
+        h_name.innerHTML = happen_name[i];
+        h_time.innerHTML = times[i];
+        h_tick.src    ="https://www.dropbox.com/s/nvb70nk2rs2x8mk/iconfinder_tick_blue_619551.png?raw=1" ;
+        h_headline.innerHTML = h_news[i];
+        h_img.src = h_images[i];
+    
+        trend.appendChild(happen_wrap);
+        happen_wrap.appendChild(h_container);
+happen_wrap.appendChild(h_img_wrap);
+        h_container.appendChild(h_span);
+        h_container.appendChild(h_headline);
+        h_span.appendChild(h_name);
+        h_span.appendChild(h_time);
+        h_span.appendChild(h_tick);    
+        
+        h_img_wrap.appendChild(h_img);
+    
+     }
+ }
+    
+    /****message tab creation**/
+    
+let message = document.querySelector(".pc_body");
+ 
+for(let i = 0;i <= 14; i++)
+{
+    p_wrap = document.createElement("DIV");
+    pic = document.createElement("IMG");
+    pic_wrap =     document.createElement("DIV");               
+    p_container = document.createElement("DIV");
+    p_span = document.createElement("span");
+    p_name = document.createElement("H4");
+    p_id = document.createElement("P");
+    p_time = document.createElement("P");
+    p_msg = document.createElement("P");
+    
+    p_wrap.className = "p_wrap";
+    pic.className = "pic";
+    pic_wrap.className = "pic_wrap";
+    p_container.className = "p_container";
+    p_name.className = "p_name";
+    p_id.className = "p_id";
+    p_span.className = "p_span";
+    p_time.className = "p_time";
+    p_msg.className = "p_msg";
+    
+    pic.src = pictures[i];
+    p_name.innerHTML = people[i];
+    p_id.innerHTML = peopleId[i];
+    p_time.innerHTML = times[i];
+    p_msg.innerHTML = messages[i];
+    
+    message.appendChild(p_wrap);
+    p_wrap.appendChild(pic_wrap);
+    pic_wrap.appendChild(pic);
+    p_wrap.appendChild(p_container);
+    p_container.appendChild(p_span);
+    p_container.appendChild(p_msg);
+    p_span.appendChild(p_name);
+    p_span.appendChild(p_id);
+    p_span.appendChild(p_time);
+    
+}
+
+/*****down slide function**/
+function downNav(){
+    let dSlide = document.querySelector("#h_card");
+    let d = document.querySelectorAll(".drop");
+    let h =        document.querySelector(".hide_card");
+    let pos = 0;
+  for(let i =0; i<d.length ;i++){
+d[i].onclick = function()
+{
+       dropClick = setInterval(moveUp,1);
+
+    function moveUp(){
+    if(pos==50){
+       clearInterval(dropClick);
+       console.log("Click gray handle for sliding down \n\n");
+             }
+     else{
+        pos+=1; 
+        dSlide.style.bottom = pos + 'px';  
+          }
+      }
+      
+    
+}
+  }
+    h.onclick = function()
+{
+     let  dropClick1 =     setInterval(moveDown,1);
+     
+    function moveDown(){
+    if(pos==-220){
+       clearInterval(dropClick1);
+             }
+     else{
+        pos-=1; dSlide.style.bottom = pos + 'px'; 
+          }
+          
+      }
+} 
+}
+ 
+let tab;
+let bell = document.querySelector("#notif_icon");
+bell.onfocus = function(){
+     tab = document.querySelector(".ntab");
+     tab.style.display = "flex";
+     }
+    
+  try{
+    let search = document.querySelector("#trend_icon");
+    let head_bird = document.querySelector("#head_bird");
+     let s_bar = document.createElement("INPUT");
+        s_bar.setAttribute("type","search");
+    s_bar.setAttribute("name","search");    
+  s_bar.placeholder = " 🔎 Search";
+        s_bar.className = "search";
+    head_bar.appendChild(s_bar);
+    search.addEventListener("focus", searchBar);
+    s_bar.addEventListener("search", removeSearch);
+    switcher[0].addEventListener("focus",removeSearch);
+    switcher[2].addEventListener("focus",removeSearch);
+    switcher[3].addEventListener("focus",removeSearch);
+    
+        function removeSearch(){
+        head_bird.style.opacity = "1";
+        s_bar.style.display = "none";
+    }
+    
+        function searchBar(){
+          
+    head_bird.style.opacity = "0.0";
+        s_bar.style.display = "block";
+        }
+    } catch(err){
+    main_body.innerHTML = err.message;
+}
+let trend_tab= document.querySelectorAll(".t_tab");
+     trend_tab.className = "hhh";
+  let trend_tabs = document.querySelectorAll(".hhh");
+  trend_tab[0].style.borderBottom = "3px solid #1DA1F2";
+  
+  for(let i = 0;i <= 4;i++){
+
+    trend_tab[i].onclick = function(){
+    for(let i = 0;i <= 4;i++)
+    {
+       trend_tab[i].style.borderBottom="0px solid #1DA1F2";
+                 } 
+  
+    trend_tab[i].style.borderBottom = "3px solid #1DA1F2";
+            }
+        };
+        
+let tweet_body = document.querySelector("#tweet");
+let text_area = document.querySelector("#tweets"); 
+let tweet_close = document.querySelector(".tweet_close");
+let tweet_it = document.querySelector(".tweet_button");
+    function tweet(){
+        return text_area.value;
+    }
+let feather = document.querySelector("#float");
+   
+    feather.onclick = function(){
+        tweet_body.style.display = "block";
+    };
+    
+    tweet_close.onclick = function(){
+        tweet_body.style.display = "none";
+    }
+    tweet_it.onclick = function(){
+       
+        topic.splice(0,1,tweet());
+        id.splice(0,1,"Akshay SM");
+        dp.splice(0,1,"https://api.sololearn.com/Uploads/Avatars/8450145.jpg");
+    atRate.splice(0,1, "@logicredefined");
+    contents.splice(0,1,"");
+    times.splice(0,1,"Just now");
+    feedmake(0,0);
+
+        tweet_body.style.display = "none";
+        
+    }
+      let t_len = topic.length-1;
+    feedmake(1,t_len);
+       trendMake();
+       let settings = document.querySelector("#head_settings").onclick = function(){
+           alert("Nothing modifiable Here!!! :p");
+       }
+let credit = document.querySelector("#credit").onclick =function(){
+console.log("Thanks to Tanay Bhatt for his help");
+console.log("................");
+    console.log("FlexBox taught by Satnam Singh and Rishabh Singh");
+    console.log("................");
+    console.log("Tested By : Tanay aka Thekedar, Rishabh Singh, Zack, SKR");
+    console.log("................");
+    console.log("Icons taken from Favicons and Icons8");
+    console.log("................");
+    console.log("Rest of the design and all contents are taken from Twitter App");
+    console.log("................");
+    console.log("Do try tweeting something");
+    console.log("................");
+    console.log("Thanks for visiting :D\n\n\n");
+}
+  
+      
+    }
+
+
+    
+</script>
