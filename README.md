@@ -1,1 +1,143 @@
 # Pritam2958.github.io
+<!-- This is about me -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1 align="center">&#129303 Hello Guys!!!! &#129303</h1>
+  <h5 align="center">About me</h5>
+  <ol>
+    <li><h4>Name: Pritam Santra</h4></li>
+    <li><h4> DOB: 13/11/2009</h4></li>
+    <li><h4>School: Kendriya Vidyalaya Ballygunge</h4></li>
+    <li><h4>Class: VII (7) </h4></li>
+    <li><h4>Country: India</h4></li>
+    <li><h4>Languages I know: C++ </h4></li>
+    <li> <h4>Learning now: Web dev(html,css,js,php)</h4></li>
+  </ol>
+  <hr />
+  <details align="center">
+    <summary>See my Social Media</summary>
+    <h1 align="center">Social Media :</h1>
+    <h2><i>
+      <p align="center">
+        <a href="https://github.com/Pritam2958">Github</a>
+      </p>
+      <p align="center">
+        <a href="https://youtube.com/channel/UCiHnC84X5gaQ8h5FoQIJ4zw">Youtube</a>
+      </p>
+      <p align="center">
+        <a href="https://www.sololearn.com/Profile/23055079/?ref=app">Sololearn</a>
+      </p>
+      <p align="center">
+        <a href="https://open.spotify.com/user/314cje7mh33qaaurdfewiei27nr4?si=KzUlBvQSSXCsbORTm17C8A&utm_source=copy-link ">Spotify</a>
+      </p>
+      <p align="center">
+        <a href="https://pritam2958.github.io/WEBS/">See my Projects</a>
+      </p>
+    </details>
+    </i></h2>
+  <hr />
+  <h3 align="center"> How I started coding </h3>
+  I started coding when there was lockdown in India. We were all at home and one day as I was scrolling through youtube , I saw how coding is done . My first ever coding lang was C++ and I also have a copy in which I write C++ and other Enjeeneering stuff . But now once I complete C++ I won't write courses in my copy anymore . I would write only Enjeeneering stuff there .
+  <br />
+  <br />
+  My Dream is to master all coding languages in the world . And I know one day it will come true . I have a youtube channel named <strong>Extreme Programming</strong>. Do please subscribe to me .
+  <br />
+  <hr />
+  <h2 align="center">Contact Me</h2>
+  <i><p align="center">
+    <a href="mailto:mantusantra591@gmail.com">Email me</a>
+  </p>
+  </i>
+  You can contact me on Discord . my discord account is <i> <b> Pritam#2889 </i> </b>
+  <br />
+  <br />
+  <strong> NO UNKNOWN FRIEND REQUESTS ARE ACCEPTED ON DISCORD. YOU CAN ONLY DM ME.</strong>
+  <hr />
+  <h3 align="center">Why I like coding </h3>
+  I like coding because I can create many things with that. I can create things that will help people. I like making things that people like. That's why I am learning web dev. I would try my level best always.
+  <hr />
+  <h3 align="center">Some more things about me </h3>
+  <ul>
+    <li><p>
+      <b>Fav Movie makers:</b> MCU (Marvel Cinematic Universe)
+    </p>
+    </li>
+    <li><p>
+      <b>Fav Superhero:</b> Dr.Strange,Deadpool and Iron Man <br />
+    </p>
+    </li>
+    <li><p>
+      <b>Fav Ice Cream Flavour:</b> Choco
+    </p>
+    </li>
+    <li><p>
+      <b>Fav TV show:</b> Cricket Matches <br />
+    </p>
+    </li>
+    <li><p>
+      <b>Fav youtuber:</b> Triggered Insaan
+    </p>
+    </li>
+    <li><p>
+      <b>Fav music band:</b> Imagine Dragons (the singers of <i>"believer"</i>) and League of Legends (singers of <i>"Legends Never Die"</i>)
+    </p>
+    </li>
+    <li><p>
+      <b> fav singer: </b> Alan Walker
+    </p>
+    </li>
+    <li><p>
+      <b>biggest fear:</b> bees ~_~ !!
+    </p>
+    </li>
+    <li><p>
+      <b>fav food:</b> As an Indian , I like <i>Mutton Biriani</i>
+    </p>
+    </li>
+    <li><p>
+      <b>fav programming language:</b> C++
+    </p>
+    </li>
+    <li><p>
+      <b>fav job:</b> Web Developer
+    </p>
+    </li>
+    <li><p>
+      <b>fav electronic device:</b> Laptop
+    </p>
+    </li>
+    <li><p>
+      <b>fav subject:</b> English,Maths,Science,Computer Science
+    </p>
+    </li>
+    <li><p>
+      <b>fav pets:</b> cats
+    </p>
+    </li>
+    <li><p>
+      <b>my universe:</b> MCU (Marvel Cinematic Universe)
+    </p>
+    </li>
+    <li><p>
+      <b>fav movie:</b> Avengers Endgame
+    </p>
+    </li>
+    <li><p>
+      <b>fav electronic device:</b> apple inc. and google inc.
+    </p>
+    </li>
+    <li><p>
+      <b>fav actor</b> Robert Downey Jr.
+    </p>
+    </li>
+  </ul>
+  <hr />
+  <h4 align="center">My Certificates :</h4>
+  <br />
+  <img src="https://www.sololearn.com/certificates/course/en/23055079/1051/landscape/png" alt="">
+</body>
+</html>
