@@ -25,7 +25,7 @@ DO NOT COPY WITHOUT CREDITS ❌
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
     animation: 
-    typing 3.5s steps(40, end),
+    typing 4.5s steps(40, end),
     blink-caret .75s step-end infinite;
 }
 
@@ -37,10 +37,11 @@ DO NOT COPY WITHOUT CREDITS ❌
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
+  from, to { border-color: transparent}
+  50% { border-color: rgb(0, 255, 0); }
 }
 body {
+    font-size: 25px;
     font-family: 'VT323', monospace;
     background-color: rgb(0, 0, 0);
     color: rgb(0, 255, 0);
@@ -51,17 +52,19 @@ body {
 pre{
     color: rgb(0, 255, 0);
     font-family: 'VT323', monospace;
+    font-size: 25px;
 }
 
 button{
     cursor: pointer;
     border: 0px;
     font-family: monospace;
-    width: 100%;
+    width: 50%;
     font-family: 'VT323', monospace;
     color: rgb(0, 255, 0);
     background-color: black;
     border-right: 2px solid #FFFFFF ;
+    font-size: 25px;
 }
 </style>
 <script>
