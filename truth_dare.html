@@ -1,83 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Truth Or Dare</title>
-    </head> 
-<script src="https://sancho1952007.github.io/ad-maker/lib/ad-maker.min.js"></script>
-<link rel="stylesheet" href="https://sancho1952007.github.io/ad-maker/lib/ad-maker.min.css">
-    <body>
-        <main>
-            <header>Truth<br>Or<br>Dare</header>
-            <div id="choices">
-                <button id="truth" onclick="truth()">Truth</button>
-                <button id="dare" onclick="dare()">Dare</button>
-            </div>
-            <div id="pick"></div>
-        </main>
-<div class="ad" url="wikipedia.org" width="100%" height="500"><p>Advertisment</p><img src="images.jpeg" alt="ad-image"><b>JOIN WIKIPEDIA & READ ANYTHING ANYWHERE FOR FREE</b></div>
-    </body>
-    <style>
-    .ad {
-      align-content: bottom;
-      display: flex;
-      color: black;
-    }
-        body {
-  text-align: center;
-  color:white;
-}
-main {
-    height:300px;
-    width:300px;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Truth Or Dare</title>
+</head>
+<body>
+  <main>
+    <header>
+      Truth<br>Or<br>Dare
+    </header>
+    <div id="choices">
+      <button id="truth" onclick="truth()">Truth</button>
+      <button id="dare" onclick="dare()">Dare</button>
+    </div>
+    <div id="pick"></div>
+  </main>
+</body>
+<style>
+  body {
+    text-align: center;
+    color: white;
+  }
+  main {
+    height: 300px;
+    width: 300px;
     position: absolute;
-    left:50%;
+    left: 50%;
     top: 50%;
     margin-left: -150px;
     margin-top: -150px;
     border-radius: 30px;
     background: linear-gradient(50deg, red, pink);
-}
-button {
-  width:100px;
-  height: 100px;
-  margin-top:5px;
-  font-size: 20px;
-  color: white;
-  border-radius: 50%;
-  background: pink;
-  outline: none;
-}
+  }
+  button {
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+    font-size: 20px;
+    color: white;
+    border-radius: 50%;
+    background: pink;
+    outline: none;
+    z-index: 1;
+  }
 
-button:hover {
-  outline: none;
-  animation:rotate 3s linear infinite;
-}
-#pick {
-  min-width: 200px;
-  min-height: 130px;
-  background: linear-gradient(50deg, red, pink);
-  margin-top: 70px;
-  font-size: 20px;
-  border-radius: 30px;
-}
-header {
+  button:hover {
+    outline: none;
+    animation: rotate 3s linear infinite;
+  }
+  #pick {
+    min-width: 200px;
+    min-height: 130px;
+    background: linear-gradient(50deg, red, pink);
+    margin-top: 70px;
+    font-size: 20px;
+    border-radius: 30px;
+  }
+  header {
     text-align: center;
     font-size: 40px;
     text-shadow: 2px 2px red, 4px 4px pink;
     opacity: 0.7;
-}
+  }
 @keyframes rotate {
     to {
-        transform: rotateZ(360deg);
+      transform: rotateZ(360deg);
     }
-}
+  }
 
-    </style>
-    <script Javascript>
-        var honesty = [
+</style>
+<script Javascript>
+  var honesty = [
     "Are you still in love with your ex?",
     "What would you do if you woke up trapped in the opposite sex's body?",
     "Can you see the matrix?",
@@ -108,9 +103,9 @@ header {
     "What is your biggest fear?",
     "Would you last a week without your best friend?",
     "What is your nickname?"
-];
-    
-var risky = [
+  ];
+
+  var risky = [
     "I dare you to call your ex and act crazy",
     "I dare you to swim with sharks",
     "I dare you to eat very hot pepper",
@@ -128,7 +123,7 @@ var risky = [
     "I dare you to climb a tall tree",
     "I dare you to eat a bug",
     "I dare you to shave your head",
-    "I dare you to drink 2 litres of water without taking a break", 
+    "I dare you to drink 2 litres of water without taking a break",
     "I dare you to hug a stranger's dog",
     "I dare you to act like a monkey for 1 minute",
     "I dare you to write a poem",
@@ -141,15 +136,16 @@ var risky = [
     "I dare you to do pushups for 5 minutes",
     "I dare you to write your name with your foot",
     "I dare you to ask a stranger for a hug"
-];
+  ];
 
-var truth = function () { 
-    var randomTruth = (Math.floor(Math.random() * honesty.length)); 
-    document.getElementById('pick').innerHTML = ("***TRUTH***" + "<br><br>" + honesty[randomTruth]); 
-};
+  var truth = function () {
+    var randomTruth = (Math.floor(Math.random() * honesty.length));
+    document.getElementById('pick').innerHTML = ("***TRUTH***" + "<br><br>" + honesty[randomTruth]);
+  };
 
-var dare = function (){ 
+  var dare = function () {
     var randomDare = (Math.floor(Math.random() * risky.length));
-    document.getElementById('pick').innerHTML = ("***DARE***" + "<br><br>" + risky[randomDare]); 
-};    </script>
+    document.getElementById('pick').innerHTML = ("***DARE***" + "<br><br>" + risky[randomDare]);
+  };
+</script>
 </html>
