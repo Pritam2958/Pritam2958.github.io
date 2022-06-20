@@ -1,1 +1,220 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="Track IP address" content="Track where your  victim is currently located">
+  <meta name="Ip-Tracker" content="Track IP addresses">
+  <meta name="author" content="Neutral Me">
+  <title>Ip Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h3>IP LOCATOR</h3>
+  <div class="main">
+    <div class="container">
+      <input type="text" placeholder="Enter IP address here" id="ipBox" value="" required>
+      <button id="go" onclick="go()">GO</button>
+    </div>
+    <br>
+    <div class="sContainer">
+      IP Address: <div id="one"></div>
+      <br>
+      Type: <div id="two"></div>
+      <br>
+      Continent: <div id="three"></div>
+      <br>
+      Continent Code: <div id="four"></div>
+      <br>
+      Country: <div id="five"></div>
+      <br>
+      Country Code: <div id="six"></div>
+      <br>
+      Country Flag: <div id="seven"></div>
+      <br>
+      Country Capital: <div id="eight"></div>
+      <br>
+      Country Code: <div id="nine"></div>
+      <br>
+      Country Neighbour: <div id="ten"></div>
+      <br>
+      Region: <div id="oneone"></div>
+      <br>
+      City: <div id="onetwo"></div>
+      <br>
+      Latitude: <div id="onethree"></div>
+      <br>
+      Longitude: <div id="onefour"></div>
+      <br>
+      ASN: <div id="onefive"></div>
+      <br>
+      Organization: <div id="onesix"></div>
+      <br>
+      ISP: <div id="oneseven"></div>
+      <br>
+      Time Zone: <div id="oneeight"></div>
+      <br>
+      Time Zone GMT: <div id="onenine"></div>
+      <br>
+      Currency: <div id="twozero"></div>
+      <br>
+      Currency Code: <div id="twoone"></div>
+      <br>
+      Currency Symbol: <div id="twotwo"></div>
+      <br>
+      Currency Rate 1$: <div id="twothree"></div>
+      <br>
+    </div>
+  </div>
+  <div class="container">
+   <p>To get an IP address for a device, open<i> pritam2958.github.io/WEBS/device.html</i> on that device or click <i><a href="pritam2958.github.io/WEBS/device.html">Here</a></i></p>
+  </div>
+</body>
+</html>
+<style>
 
+body {
+color: #293250;
+width: 100%;
+}
+h3 {
+text-align: center;
+font-family: 'Reggae One', cursive;
+}
+a {
+font-size: 10px;
+background-color: red;
+box-shadow: 0 5px 0 darkred;
+color: white;
+border-radius: 5px;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;
+padding: 10px;
+}
+a:hover {
+box-shadow: none;
+top: 5px;
+}
+.container {
+border: none;
+background-image: linear-gradient(to right, #ffd55a, #ffd55a);
+border-radius: 20px;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+margin: 100px auto;
+padding: 10px;
+transition: 0.5s;
+}
+.container:hover {
+box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+.sContainer {
+margin: 20px;
+padding: 20px;
+border: none;
+border-radius: 25px;
+vertical-align: center;
+horizontal-align: center;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+#ipBox {
+border: 0;
+padding: 8px;
+width: 80%;
+border-radius: 5px;
+font-family: monospace;
+transition: 0.5s;
+vertical-align: center;
+}
+#ipBox:focus {
+outline: none;
+border: 2px solid #293250;
+}
+#go {
+padding: 8px;
+background-color: #6dd47e;
+border-radius: 5px;
+width: 50px;
+border: none;
+}
+#go:focus {
+outline: none;
+}
+#shortened {
+text-align: center;
+}
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #onezero, #oneone, #onetwo, #onethree, #onefour, #onefive, #onesix, #oneseven, #oneeight, #onenine,#twozero,#twoone,#twotwo,#twothree {
+display: inline-block;
+}
+</style>
+<script>
+function go() {
+var api = new XMLHttpRequest();
+var ip = document.getElementById(
+"ipBox").value;
+var finalUrl =
+"https://ipwhois.app/json/" + ip;
+api.open("GET", finalUrl);
+api.send();
+api.onload = (e) => {
+var ap = JSON.parse(api
+.responseText);
+document.getElementById(
+"one").innerHTML = ap.ip;
+document.getElementById(
+"two").innerHTML = ap.type;
+document.getElementById(
+"three").innerHTML = ap.continent;
+document.getElementById(
+"four").innerHTML = ap
+.continent_code;
+document.getElementById(
+"five").innerHTML = ap.country;
+document.getElementById(
+"six").innerHTML = ap.country_code;
+document.getElementById(
+"seven").innerHTML = ap
+.country_flag;
+document.getElementById(
+"eight").innerHTML = ap
+.country_capital;
+document.getElementById(
+"nine").innerHTML = ap
+.country_phone;
+document.getElementById(
+"ten").innerHTML = ap
+.country_neighbours;
+document.getElementById(
+"oneone").innerHTML = ap.region;
+document.getElementById(
+"onetwo").innerHTML = ap.city;
+document.getElementById(
+"onethree").innerHTML = ap.latitude;
+document.getElementById(
+"onefour").innerHTML = ap.longitude;
+document.getElementById(
+"onefive").innerHTML = ap.asn;
+document.getElementById(
+"onesix").innerHTML = ap.org;
+document.getElementById(
+"oneseven").innerHTML = ap.isp;
+document.getElementById(
+"oneeight").innerHTML = ap.timezone;
+document.getElementById(
+"onenine").innerHTML = ap
+.timezone_name;
+document.getElementById(
+"twozero").innerHTML = ap
+.timezone_gmt;
+document.getElementById(
+"twoone").innerHTML = ap.currency;
+document.getElementById(
+"twotwo").innerHTML = ap
+.currency_symbol;
+document.getElementById(
+"twothree").innerHTML = ap
+.currency_rates;
+};
+}
+</script>
