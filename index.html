@@ -7,6 +7,7 @@
     </head>
 <link rel="icon" type="image/x-icon" href="icon.jpeg">
     <body>
+      <img id="background" src="https://wallpaperaccess.com/download/blue-gradient-phone-1092572">
       <h1 align="center">&#129303 Hello Guys!!!! &#129303</h1>  
       <h5 align="center">About me</h5>
      <ol>
@@ -72,7 +73,7 @@
   <hr /> 
   <h4 align="center">My Certificates :</h4>
   <br />
-  <img src="https://www.sololearn.com/certificates/course/en/23055079/1051/landscape/png" alt="">
+  <img class="certificate" src="https://www.sololearn.com/certificates/course/en/23055079/1051/landscape/png" alt="">
     </body>
 </html>
 <style>
@@ -81,12 +82,23 @@
  width: 900px;
  align-items: center;
  font-family: 'Gentium Plus', serif;
- color: #233067;
- background-color: #FFF5EE;
+ color: #FFFFFF;
+ z-index: 2;
  }
- img {
+  #background{
+   height: 1000%;
+   width: 100%;
+   z-index: -1;
+   
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+ .certificate {
  padding: 10px;
- border: 5px solid rgb(0,0,0);
+ border: 5px solid rgb(255, 255, 255);
+ z-index: 2;
  }
  ::selection {
  color: rgb(70, 130, 180); 
