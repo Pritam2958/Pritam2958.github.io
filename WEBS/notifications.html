@@ -6,9 +6,8 @@
   </head>
   <body>
     <h1 align="center">Send Notifications using js</h1>
-    <p align="center">Click button to send message</p>
-    <button onclick="start()" align="center">Click</button>
-  </body>
+    <p align="center">Refresh page to get another Notification</p>
+    </body>
 </html>
 <style>
   body {
@@ -41,8 +40,12 @@ button {
 <script src="push.min.js"></script>
 <script src="serviceWorker.min.js"></script>
 <script>
-Push.Permission.GRANTED;
-function start () {
-   Push.create(Date())
-}
+   Push.create("See here !", {
+       body: "This is a push notification !",
+       icon: '../icon.jpeg',
+       onClick: function () {
+           window.focus();
+           this.close();
+       }
+   });
 </script>
