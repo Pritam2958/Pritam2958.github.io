@@ -33,7 +33,8 @@
 <script src="push.min.js"></script>
 <script src="serviceWorker.min.js"></script>
 <script>
+var word = document.getElementById(input);
 function start () {
-   Push.create(document.getElementById(input))
+   Push.create("word")
 }
 </script>
