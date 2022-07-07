@@ -29,7 +29,7 @@ button {
   var buttons = document.getElementById("button");
   var buttons2 = document.getElementById("button2");
   var buttons3 = document.getElementById("button3");
-  var isred = true;
+  var isred = false;
   
   main.style.color = "white";
   main.style.fontFamily = "monospace";
@@ -48,13 +48,13 @@ button {
     if (isred = true) {
       main.style.fontFamily = "cursive";
       main.style.color = "red";
-      isred = false;
+      let isred = false;
     }
     else {
-      if (isred = false) {
+      if (isred != true) {
       main.style.fontFamily = 'Ubuntu Condensed, sans-serif';
       main.style.color = "purple";
-      isred = true;
+      let isred = true;
     }
   }
   }
