@@ -1,8 +1,0 @@
-font-family: 'Concert One', cursive;
-font-family: 'EB Garamond', serif;
-font-family: 'Great Vibes', cursive;
-font-family: 'Lavishly Yours', cursive;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Patrick Hand', cursive;
-font-family: 'Share Tech Mono', monospace;
-font-family: 'Source Code Pro', monospace;
